@@ -32,6 +32,8 @@ function App() {
         <p>
 
         Ryan Weiss, Ever Merino, Dylan Frajerman
+        </p>
+        <p>
           Edit <code>src/App.tsx</code> and save to reload.
 
         </p>
