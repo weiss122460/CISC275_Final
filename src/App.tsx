@@ -3,13 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
 
+//add-name-ryanweiss
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
 let keyData = "";
 const saveKeyData = "MYKEY";
 const prevKey = localStorage.getItem(saveKeyData); //so it'll look like: MYKEY: <api_key_value here> in the local storage when you inspect
 if (prevKey !== null) {
   keyData = JSON.parse(prevKey);
-}
+} 
 
 function App() {
   const [key, setKey] = useState<string>(keyData); //for api key input
@@ -29,8 +30,10 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-        Ever Merino
+
+        Ryan Weiss, Ever Merino, Dylan Frajerman
           Edit <code>src/App.tsx</code> and save to reload.
+
         </p>
         <a
           className="App-link"
