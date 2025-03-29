@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
+import { Homepage } from './Pages/Homepage';
+import {BasicQuestions} from './Pages/BasicQuestions';
 
 //add-name-ryanweiss
 //local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
@@ -46,6 +48,14 @@ function App() {
           Learn React
         </a>
       </header>
+      {// End of header and beginning of content
+}
+
+<Homepage></Homepage>
+<BasicQuestions></BasicQuestions>
+
+{//End of contnent and beginning of API Key. DO NOT MESS WITH BELOW CODE
+}
       <Form>
         <Form.Label>API Key:</Form.Label>
         <Form.Control type="password" placeholder="Insert API Key Here" onChange={changeKey}></Form.Control>
