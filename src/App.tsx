@@ -2,9 +2,11 @@ import React, { useState, useEffect, useCallback } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
+
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import PageOne from './PageOne';
 import PageTwo from './PageTwo';
+
 
 // Helper functions for API key handling
 const saveKeyData = "MYKEY";
@@ -38,12 +40,14 @@ const Home: React.FC = () => {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+
         <p>Ryan Weiss, Ever Merino, Dylan Frajerman</p>
         <p>Edit <code>src/App.tsx</code> and save to reload.</p>
 
         <Button onClick={() => navigate("/page-one")}>Go to Page One</Button>
         <Button onClick={() => navigate("/page-two")} style={{ marginLeft: '10px' }}>Go to Page Two</Button>
       </header>
+
 
       <Form>
         <Form.Label>API Key:</Form.Label>
