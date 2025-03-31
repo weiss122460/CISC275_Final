@@ -36,7 +36,8 @@ const Home: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={`${process.env.PUBLIC_URL}/logo.svg`} className="App-logo" alt="logo" />  {/* Fixed logo path */}
+        <img src={`${process.env.PUBLIC_URL}/logo192.png`} className="App-logo" alt="logo" />
+
         <p>Ryan Weiss, Ever Merino, Dylan Frajerman</p>
         <p>Edit <code>src/App.tsx</code> and save to reload.</p>
 
