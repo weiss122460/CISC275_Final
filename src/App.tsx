@@ -1,12 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
-
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';  // Changed to HashRouter
 import PageOne from './PageOne';
 import PageTwo from './PageTwo';
-
 
 // Helper functions for API key handling
 const saveKeyData = "MYKEY";
@@ -39,8 +36,7 @@ const Home: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-
+        <img src={`${process.env.PUBLIC_URL}/logo.svg`} className="App-logo" alt="logo" />  {/* Fixed logo path */}
         <p>Ryan Weiss, Ever Merino, Dylan Frajerman</p>
         <p>Edit <code>src/App.tsx</code> and save to reload.</p>
 
@@ -48,14 +44,13 @@ const Home: React.FC = () => {
         <Button onClick={() => navigate("/page-two")} style={{ marginLeft: '10px' }}>Go to Page Two</Button>
       </header>
 
-
       <Form>
         <Form.Label>API Key:</Form.Label>
         <Form.Control
           type="password"
           placeholder="Insert API Key Here"
           value={key}
-          onChange={(e) => setKey(e.target.value)} // Functional update pattern
+          onChange={(e) => setKey(e.target.value)}  // Functional update pattern
         />
         <br />
         <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
