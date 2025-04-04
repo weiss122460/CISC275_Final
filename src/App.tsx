@@ -2,8 +2,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
 import { HashRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';  // Changed to HashRouter
-import PageOne from './PageOne';
-import PageTwo from './PageTwo';
+import PageOne from './BasicQuestions';
+import PageTwo from './AdvancedQuestions';
 
 // Helper functions for API key handling
 const saveKeyData = "MYKEY";
@@ -41,8 +41,8 @@ const Home: React.FC = () => {
         <p>Ryan Weiss, Ever Merino, Dylan Frajerman</p>
         <p>Edit <code>src/App.tsx</code> and save to reload.</p>
 
-        <Button onClick={() => navigate("/page-one")}>Go to Page One</Button>
-        <Button onClick={() => navigate("/page-two")} style={{ marginLeft: '10px' }}>Go to Page Two</Button>
+        <Button onClick={() => navigate("/page-one")}>Go to Basic Questions</Button>
+        <Button onClick={() => navigate("/page-two")} style={{ marginLeft: '10px' }}>Go to Advanced Questions</Button>
       </header>
 
       <Form>
