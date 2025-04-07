@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (46 ms)
+  ✕ renders learn react link (58 ms)
 
   ● renders learn react link
 
@@ -15,6 +15,60 @@ FAIL src/App.test.tsx
         [36m<div[39m
           [33mclass[39m=[32m"App"[39m
         [36m>[39m
+          [36m<nav[39m
+            [33mclass[39m=[32m"navbar navbar-expand-lg navbar-dark bg-dark"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"container"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mclass[39m=[32m"navbar-brand"[39m
+                [33mhref[39m=[32m"/"[39m
+              [36m>[39m
+                [0mMyWebsite[0m
+              [36m</a>[39m
+              [36m<button[39m
+                [33maria-controls[39m=[32m"basic-navbar-nav"[39m
+                [33maria-label[39m=[32m"Toggle navigation"[39m
+                [33mclass[39m=[32m"navbar-toggler collapsed"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"navbar-toggler-icon"[39m
+                [36m/>[39m
+              [36m</button>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"navbar-collapse collapse"[39m
+                [33mid[39m=[32m"basic-navbar-nav"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"me-auto navbar-nav"[39m
+                [36m>[39m
+                  [36m<a[39m
+                    [33mclass[39m=[32m"nav-link"[39m
+                    [33mdata-rr-ui-event-key[39m=[32m"/"[39m
+                    [33mhref[39m=[32m"/"[39m
+                  [36m>[39m
+                    [0mHome[0m
+                  [36m</a>[39m
+                  [36m<a[39m
+                    [33mclass[39m=[32m"nav-link"[39m
+                    [33mdata-rr-ui-event-key[39m=[32m"/about"[39m
+                    [33mhref[39m=[32m"/about"[39m
+                  [36m>[39m
+                    [0mAbout[0m
+                  [36m</a>[39m
+                  [36m<a[39m
+                    [33mclass[39m=[32m"nav-link"[39m
+                    [33mdata-rr-ui-event-key[39m=[32m"/contact"[39m
+                    [33mhref[39m=[32m"/contact"[39m
+                  [36m>[39m
+                    [0mContact[0m
+                  [36m</a>[39m
+                [36m</div>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</nav>[39m
           [36m<header[39m
             [33mclass[39m=[32m"App-header"[39m
           [36m>[39m
@@ -94,12 +148,13 @@ FAIL src/App.test.tsx
 ------------------------|---------|----------|---------|---------|-------------------
 File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 ------------------------|---------|----------|---------|---------|-------------------
-All files               |   25.35 |       10 |    12.9 |   26.08 |                   
- src                    |   27.27 |       10 |   15.38 |   28.12 |                   
-  AdvancedQuestions.tsx |    9.52 |        0 |       0 |      10 | 12-57             
-  App.tsx               |   73.68 |       50 |   44.44 |   73.68 | 19,33,44-54       
-  BasicQuestions.tsx    |   13.33 |      100 |       0 |   14.28 | 21-53             
+All files               |   27.39 |       10 |   15.62 |   28.16 |                   
+ src                    |   29.41 |       10 |   18.51 |    30.3 |                   
+  AdvancedQuestions.tsx |    9.52 |        0 |       0 |      10 | 13-59             
+  App.tsx               |   73.68 |       50 |   44.44 |   73.68 | 20,34,46-56       
+  BasicQuestions.tsx    |   13.33 |      100 |       0 |   14.28 | 22-55             
   index.tsx             |       0 |      100 |     100 |       0 | 7-19              
+  navBar.tsx            |     100 |      100 |     100 |     100 |                   
   reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10              
  src/Pages              |       0 |      100 |       0 |       0 |                   
   BasicQuestions.tsx    |       0 |      100 |       0 |       0 | 7                 
@@ -109,7 +164,7 @@ All files               |   25.35 |       10 |    12.9 |   26.08 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.003 s
+Time:        3.022 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
