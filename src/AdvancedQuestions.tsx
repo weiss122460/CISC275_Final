@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, ProgressBar, Form } from 'react-bootstrap';
+import NavBar from './navBar';
 
 const questions = [
   "What is your dream job and why?",
@@ -31,6 +32,7 @@ const PageTwo: React.FC = () => {
 
   return (
     <div style={{ textAlign: 'center', padding: '20px' }}>
+      <NavBar />
       <h1>Career Quiz - Short Answer</h1>
       <ProgressBar now={progress} label={`${progress}%`} style={{ marginBottom: '20px' }} />
       {questions.map((q, index) => (
