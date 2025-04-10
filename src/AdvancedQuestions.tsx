@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Button, ProgressBar, Form } from 'react-bootstrap';
 import NavBar from './navBar';
 import './AdvancedQuestions.css';
@@ -16,7 +15,6 @@ const questions = [
 const QUESTIONS_PER_PAGE = 3;
 
 const PageTwo: React.FC = () => {
-  const navigate = useNavigate();
   //an array of strings initally all set empty that correlates to the index of the 'questions' array const
   const [answers, setAnswers] = useState<string[]>(Array(questions.length).fill("")); 
   //an array of booleans meant to describe the status of the answers (whether its been answer or not)
@@ -109,8 +107,6 @@ const PageTwo: React.FC = () => {
           </Button>
         ))}
       </div>
-
-      <Button onClick={() => navigate("/")}>Go Back to Home</Button>
     </div>
     </div>
   );
