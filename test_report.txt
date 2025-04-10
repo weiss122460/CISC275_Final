@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (58 ms)
+  ✕ renders learn react link (62 ms)
 
   ● renders learn react link
 
@@ -21,12 +21,12 @@ FAIL src/App.test.tsx
             [36m<div[39m
               [33mclass[39m=[32m"container"[39m
             [36m>[39m
-              [36m<a[39m
+              [36m<span[39m
                 [33mclass[39m=[32m"navbar-brand"[39m
-                [33mhref[39m=[32m"/"[39m
+                [33mstyle[39m=[32m"cursor: pointer;"[39m
               [36m>[39m
                 [0mMyWebsite[0m
-              [36m</a>[39m
+              [36m</span>[39m
               [36m<button[39m
                 [33maria-controls[39m=[32m"basic-navbar-nav"[39m
                 [33maria-label[39m=[32m"Toggle navigation"[39m
@@ -46,22 +46,25 @@ FAIL src/App.test.tsx
                 [36m>[39m
                   [36m<a[39m
                     [33mclass[39m=[32m"nav-link"[39m
-                    [33mdata-rr-ui-event-key[39m=[32m"/"[39m
-                    [33mhref[39m=[32m"/"[39m
+                    [33mhref[39m=[32m"#"[39m
+                    [33mrole[39m=[32m"button"[39m
+                    [33mtabindex[39m=[32m"0"[39m
                   [36m>[39m
                     [0mHome[0m
                   [36m</a>[39m
                   [36m<a[39m
                     [33mclass[39m=[32m"nav-link"[39m
-                    [33mdata-rr-ui-event-key[39m=[32m"/about"[39m
-                    [33mhref[39m=[32m"/about"[39m
+                    [33mhref[39m=[32m"#"[39m
+                    [33mrole[39m=[32m"button"[39m
+                    [33mtabindex[39m=[32m"0"[39m
                   [36m>[39m
                     [0mAbout[0m
                   [36m</a>[39m
                   [36m<a[39m
                     [33mclass[39m=[32m"nav-link"[39m
-                    [33mdata-rr-ui-event-key[39m=[32m"/contact"[39m
-                    [33mhref[39m=[32m"/contact"[39m
+                    [33mhref[39m=[32m"#"[39m
+                    [33mrole[39m=[32m"button"[39m
+                    [33mtabindex[39m=[32m"0"[39m
                   [36m>[39m
                     [0mContact[0m
                   [36m</a>[39m
@@ -148,18 +151,18 @@ FAIL src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |    24.7 |     5.55 |   16.12 |    25.3 |                   
+All files              |   24.44 |     5.55 |   14.28 |      25 |                   
  AdvancedQuestions.tsx |    9.09 |        0 |       0 |    9.37 | 19-103            
  App.tsx               |   73.68 |       50 |   44.44 |   73.68 | 20,34,46-55       
  BasicQuestions.tsx    |      10 |        0 |       0 |   10.52 | 34-82             
  index.tsx             |       0 |      100 |     100 |       0 | 7-19              
- navBar.tsx            |     100 |      100 |     100 |     100 |                   
+ navBar.tsx            |   42.85 |      100 |      20 |   42.85 | 13-23             
  reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10              
 -----------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.937 s
+Time:        2.893 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
