@@ -4,6 +4,7 @@ import { Button, Form } from 'react-bootstrap';
 import { HashRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';  // Changed to HashRouter
 import PageOne from './BasicQuestions';
 import PageTwo from './AdvancedQuestions';
+import NavBar from './navBar';
 
 // Helper functions for API key handling
 const saveKeyData = "MYKEY";
@@ -35,6 +36,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="App">
+      <NavBar />
       <header className="App-header">
         <img src={`${process.env.PUBLIC_URL}/logo192.png`} className="App-logo" alt="logo" />
 
@@ -43,10 +45,9 @@ const Home: React.FC = () => {
 
         <Button onClick={() => navigate("/page-one")}>Go to Basic Questions</Button>
         <Button onClick={() => navigate("/page-two")} style={{ marginLeft: '10px' }}>Go to Advanced Questions</Button>
-      </header>
-
-      <Form>
-        <Form.Label>API Key:</Form.Label>
+        
+        <Form>
+        <Form.Label className='api'>API Key:</Form.Label>
         <Form.Control
           type="password"
           placeholder="Insert API Key Here"
@@ -56,6 +57,10 @@ const Home: React.FC = () => {
         <br />
         <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
       </Form>
+      
+      </header>
+
+      
     </div>
   );
 };

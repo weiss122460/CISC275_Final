@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Button, ProgressBar, Form } from 'react-bootstrap';
+import NavBar from './navBar';
+import './AdvancedQuestions.css';
 
 const questions = [
   "What is your dream job and why?",
@@ -9,7 +10,6 @@ const questions = [
 ];
 
 const PageTwo: React.FC = () => {
-  const navigate = useNavigate();
   const [answers, setAnswers] = useState(Array(questions.length).fill(""));
   const [submitted, setSubmitted] = useState(Array(questions.length).fill(false));
 
@@ -30,7 +30,9 @@ const PageTwo: React.FC = () => {
   const progress = Math.round((submitted.filter(answer => answer).length / questions.length) * 100);
 
   return (
-    <div style={{ textAlign: 'center', padding: '20px' }}>
+    <div className ='advanced-questions'>
+      <NavBar />
+      <div className='body'>
       <h1>Career Quiz - Short Answer</h1>
       <ProgressBar now={progress} label={`${progress}%`} style={{ marginBottom: '20px' }} />
       {questions.map((q, index) => (
@@ -54,7 +56,7 @@ const PageTwo: React.FC = () => {
           </Form>
         </div>
       ))}
-      <Button onClick={() => navigate("/")}>Go Back to Home</Button>
+   </div>
     </div>
   );
 };
