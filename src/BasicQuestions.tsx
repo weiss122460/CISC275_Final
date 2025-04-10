@@ -1,5 +1,4 @@
   import React, { useState } from 'react';
-  import { useNavigate } from 'react-router-dom';
   import { Button, ProgressBar, Form } from 'react-bootstrap';
   import NavBar from './navBar';
   import './BasicQuestions.css';
@@ -32,7 +31,6 @@ const questions = [
 ];
 
 const PageOne: React.FC = () => {
-  const navigate = useNavigate();
   const [answers, setAnswers] = useState<(string | null)[]>(Array(questions.length).fill(null));
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -89,7 +87,6 @@ const PageOne: React.FC = () => {
         ))}
       </div>
 
-      <Button onClick={() => navigate("/")}>Go Back to Home</Button>
     </div>
     </div>
   );
