@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (57 ms)
+  ✕ renders learn react link (63 ms)
 
   ● renders learn react link
 
@@ -16,7 +16,7 @@ FAIL src/App.test.tsx
           [33mclass[39m=[32m"App"[39m
         [36m>[39m
           [36m<nav[39m
-            [33mclass[39m=[32m"navbar navbar-expand-lg navbar-dark bg-dark"[39m
+            [33mclass[39m=[32m"navbar-custom navbar navbar-expand-lg navbar-light"[39m
           [36m>[39m
             [36m<div[39m
               [33mclass[39m=[32m"container"[39m
@@ -100,29 +100,29 @@ FAIL src/App.test.tsx
             [36m>[39m
               [0mGo to Advanced Questions[0m
             [36m</button>[39m
+            [36m<form[39m
+              [33mclass[39m=[32m""[39m
+            [36m>[39m
+              [36m<label[39m
+                [33mclass[39m=[32m"api form-label"[39m
+              [36m>[39m
+                [0mAPI Key:[0m
+              [36m</label>[39m
+              [36m<input[39m
+                [33mclass[39m=[32m"form-control"[39m
+                [33mplaceholder[39m=[32m"Insert API Key Here"[39m
+                [33mtype[39m=[32m"password"[39m
+                [33mvalue[39m=[32m""[39m
+              [36m/>[39m
+              [36m<br />[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"Submit-Button btn btn-primary"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mSubmit[0m
+              [36m</button>[39m
+            [36m</form>[39m
           [36m</header>[39m
-          [36m<form[39m
-            [33mclass[39m=[32m""[39m
-          [36m>[39m
-            [36m<label[39m
-              [33mclass[39m=[32m"form-label"[39m
-            [36m>[39m
-              [0mAPI Key:[0m
-            [36m</label>[39m
-            [36m<input[39m
-              [33mclass[39m=[32m"form-control"[39m
-              [33mplaceholder[39m=[32m"Insert API Key Here"[39m
-              [33mtype[39m=[32m"password"[39m
-              [33mvalue[39m=[32m""[39m
-            [36m/>[39m
-            [36m<br />[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"Submit-Button btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mSubmit[0m
-            [36m</button>[39m
-          [36m</form>[39m
         [36m</div>[39m
       [36m</div>[39m
     [36m</body>[39m
@@ -145,26 +145,21 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
-------------------------|---------|----------|---------|---------|-------------------
-File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
-------------------------|---------|----------|---------|---------|-------------------
-All files               |   23.86 |     7.14 |   13.88 |   24.41 |                   
- src                    |    25.3 |     7.14 |   16.12 |   25.92 |                   
-  AdvancedQuestions.tsx |   10.34 |        0 |       0 |   10.71 | 18-89             
-  App.tsx               |   73.68 |       50 |   44.44 |   73.68 | 20,34,46-56       
-  BasicQuestions.tsx    |    9.09 |        0 |       0 |    9.52 | 34-90             
-  index.tsx             |       0 |      100 |     100 |       0 | 7-19              
-  navBar.tsx            |     100 |      100 |     100 |     100 |                   
-  reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10              
- src/Pages              |       0 |      100 |       0 |       0 |                   
-  BasicQuestions.tsx    |       0 |      100 |       0 |       0 | 7                 
-  DetailedQuestions.tsx |       0 |      100 |       0 |       0 | 7                 
-  Homepage.tsx          |       0 |      100 |       0 |       0 | 7-10              
-------------------------|---------|----------|---------|---------|-------------------
+-----------------------|---------|----------|---------|---------|-------------------
+File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------------------|---------|----------|---------|---------|-------------------
+All files              |   23.59 |     5.55 |   15.15 |   24.13 |                   
+ AdvancedQuestions.tsx |    8.57 |        0 |       0 |    8.82 | 19-113            
+ App.tsx               |   73.68 |       50 |   44.44 |   73.68 | 20,34,46-55       
+ BasicQuestions.tsx    |    9.09 |        0 |       0 |    9.52 | 35-92             
+ index.tsx             |       0 |      100 |     100 |       0 | 7-19              
+ navBar.tsx            |     100 |      100 |     100 |     100 |                   
+ reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10              
+-----------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.098 s
+Time:        2.867 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
