@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Button, ProgressBar, Form } from 'react-bootstrap';
-import NavBar from './navBar';
+  import React, { useState } from 'react';
+  import { useNavigate } from 'react-router-dom';
+  import { Button, ProgressBar, Form } from 'react-bootstrap';
+  import NavBar from './navBar';
+  import './BasicQuestions.css';
 
 const questions = [
   {
@@ -50,8 +51,9 @@ const PageOne: React.FC = () => {
   const progress = Math.round((answers.filter(answer => answer !== null).length / questions.length) * 100);
 
   return (
-    <div style={{ textAlign: 'center', padding: '20px' }}>
+    <div className = 'basic-questions'>
       <NavBar />
+      <div className='body'>
       <h1>Career Quiz</h1>
       <ProgressBar now={progress} label={`${progress}%`} style={{ marginBottom: '20px' }} />
 
@@ -88,6 +90,7 @@ const PageOne: React.FC = () => {
       </div>
 
       <Button onClick={() => navigate("/")}>Go Back to Home</Button>
+    </div>
     </div>
   );
 };

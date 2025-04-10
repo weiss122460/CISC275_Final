@@ -45,10 +45,9 @@ const Home: React.FC = () => {
 
         <Button onClick={() => navigate("/page-one")}>Go to Basic Questions</Button>
         <Button onClick={() => navigate("/page-two")} style={{ marginLeft: '10px' }}>Go to Advanced Questions</Button>
-      </header>
-
-      <Form>
-        <Form.Label>API Key:</Form.Label>
+        
+        <Form>
+        <Form.Label className='api'>API Key:</Form.Label>
         <Form.Control
           type="password"
           placeholder="Insert API Key Here"
@@ -58,6 +57,10 @@ const Home: React.FC = () => {
         <br />
         <Button className="Submit-Button" onClick={handleSubmit}>Submit</Button>
       </Form>
+      
+      </header>
+
+      
     </div>
   );
 };
