@@ -1,9 +1,10 @@
 import React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
+import './App.css';  // Import the CSS file for styling
 
 const NavBar = () => {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar expand="lg" className="navbar-custom">
       <Container>
         <Navbar.Brand href="/">MyWebsite</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
