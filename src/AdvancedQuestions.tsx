@@ -23,7 +23,7 @@ const PageTwo: React.FC = () => {
   //each answer submitted answer will change the array to true to the correlating question answered
   const [submitted, setSubmitted] = useState<boolean[]>(Array(questions.length).fill(false));
   //results will only be avaliable once all questions have been answers (the submitted array is all true)
-  const[results, setResults] = useState<boolean>(false);
+ // const[results, setResults] = useState<boolean>(false);
   //will allow the user to change the answer to one of the questions when given a button 
   const [currentPage, setCurrentPage] = useState(1);
 
