@@ -9,10 +9,11 @@ const questions = [
   "What is one skill you would like to improve?",
   "Who has had the biggest impact on your personal or professional growth, and how?",
   "What motivates you to keep going when things get tough?",
-  "If you could learn anything instantly, what would it be and why?"
+  "If you could learn anything instantly, what would it be and why?",
+  "Where do you see yourself in 5 years?"
 ];
 
-const QUESTIONS_PER_PAGE = 3;
+const questionsPerPage = 4;
 
 const PageTwo: React.FC = () => {
   //an array of strings initally all set empty that correlates to the index of the 'questions' array const
@@ -51,10 +52,10 @@ const PageTwo: React.FC = () => {
 
   const progress:number = Math.round((submitted.filter(answer => answer).length / questions.length) * 100);
 
-  const startIndex = (currentPage - 1) * QUESTIONS_PER_PAGE;
-  const endIndex = startIndex + QUESTIONS_PER_PAGE;
+  const startIndex = (currentPage - 1) * questionsPerPage;
+  const endIndex = startIndex + questionsPerPage;
 
-  const totalPages = Math.ceil(questions.length / QUESTIONS_PER_PAGE);
+  const totalPages = Math.ceil(questions.length / questionsPerPage);
 
   return (
     <div className ='advanced-questions'>

@@ -27,6 +27,10 @@ const questions = [
   {
     question: "What is most important to you in a job?",
     options: ["Work-life balance", "Opportunities for growth", "Making a difference", "Recognition and rewards"]
+  },
+  {
+    question: "Which of these sounds most like you?",
+    options: ["Leader", "Follower", "Active", "Passive"]
   }
 ];
 
@@ -34,7 +38,7 @@ const PageOne: React.FC = () => {
   const [answers, setAnswers] = useState<(string | null)[]>(Array(questions.length).fill(null));
   const [currentPage, setCurrentPage] = useState(1);
 
-  const questionsPerPage = 3;
+  const questionsPerPage = 4;
   const totalPages = Math.ceil(questions.length / questionsPerPage);
 
   const startIndex = (currentPage - 1) * questionsPerPage;
