@@ -22,8 +22,9 @@ const PageTwo: React.FC = () => {
   const [submitted, setSubmitted] = useState<boolean[]>(Array(questions.length).fill(false));
   //results will only be avaliable once all questions have been answers (the submitted array is all true)
   const[results, setResults] = useState<boolean>(false);
-  //will allow the user to change the answer to one of the questions when given a button 
+  //tabs to change pages to a different question
   const [currentPage, setCurrentPage] = useState(1);
+
 
   const handleAnswer = (index: number, value: string) => {
     const newAnswers = [...answers];
@@ -37,9 +38,11 @@ const PageTwo: React.FC = () => {
       newSubmitted[index] = true;
       setSubmitted(newSubmitted);
     }
-
-    
   };
+
+  function handleResults(){
+    
+  }
 
   const handleChangeAnswer = (index: number) => {
       if (answers[index].trim() !== "") {
@@ -49,6 +52,8 @@ const PageTwo: React.FC = () => {
       }
     }
 
+
+  
   const progress:number = Math.round((submitted.filter(answer => answer).length / questions.length) * 100);
 
   const startIndex = (currentPage - 1) * QUESTIONS_PER_PAGE;
@@ -106,6 +111,10 @@ const PageTwo: React.FC = () => {
         ))}
       </div>
 
+      <Button
+      disabled>
+        Get Results!
+      </Button>
       <Button onClick={() => navigate("/")}>Go Back to Home</Button>
     </div>
   );
