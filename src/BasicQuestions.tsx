@@ -1,9 +1,9 @@
-  import React, { useState } from 'react';
-  import { Button, ProgressBar, Form } from 'react-bootstrap';
-  import NavBar from './navBar';
-  import './BasicQuestions.css';
+import React, { useState } from 'react';
+import { Button, ProgressBar, Form } from 'react-bootstrap';
+import NavBar from './navBar';
+import './BasicQuestions.css';
 
-const questions = [
+export const questions = [
   {
     question: "What type of work environment do you prefer?",
     options: ["Office setting", "Remote work", "Outdoor work", "Lab/research"]
@@ -34,8 +34,14 @@ const questions = [
   }
 ];
 
+// Key used for localStorage
+const ANSWERS_KEY = 'basic-quiz-answers';
+
 const PageOne: React.FC = () => {
-  const [answers, setAnswers] = useState<(string | null)[]>(Array(questions.length).fill(null));
+  // Load saved answers from localStorage or initialize with nulls
+  const [answers, setAnswers] = useState<(string | null)[]>(
+    () => JSON.parse(localStorage.getItem(ANSWERS_KEY) || 'null') ?? Array(questions.length).fill(null)
+  );
   const [currentPage, setCurrentPage] = useState(1);
 
   const questionsPerPage = 4;
@@ -48,50 +54,50 @@ const PageOne: React.FC = () => {
     const newAnswers = [...answers];
     newAnswers[startIndex + index] = option;
     setAnswers(newAnswers);
+    localStorage.setItem(ANSWERS_KEY, JSON.stringify(newAnswers)); // Save to localStorage
   };
 
   const progress = Math.round((answers.filter(answer => answer !== null).length / questions.length) * 100);
 
   return (
-    <div className = 'basic-questions'>
+    <div className='basic-questions'>
       <NavBar />
       <div className='body'>
-      <h1>Career Quiz</h1>
-      <ProgressBar now={progress} label={`${progress}%`} style={{ marginBottom: '20px' }} />
+        <h1>Career Quiz</h1>
+        <ProgressBar now={progress} label={`${progress}%`} style={{ marginBottom: '20px' }} />
 
-      {currentQuestions.map((q, index) => (
-        <div key={startIndex + index} style={{ marginBottom: '20px' }}>
-          <h4>{q.question}</h4>
-          <Form style={{ display: 'inline-block', textAlign: 'left' }}>
-            {q.options.map((option, i) => (
-              <Form.Check
-                type="radio"
-                label={option}
-                name={`question-${startIndex + index}`}
-                key={i}
-                checked={answers[startIndex + index] === option}
-                onChange={() => handleAnswer(index, option)}
-              />
-            ))}
-          </Form>
-        </div>
-      ))}
-
-      {/* Pagination */}
-      <div style={{ marginBottom: '20px' }}>
-        {[...Array(totalPages)].map((_, i) => (
-          <Button
-            key={i}
-            variant={currentPage === i + 1 ? 'primary' : 'outline-primary'}
-            onClick={() => setCurrentPage(i + 1)}
-            style={{ margin: '0 5px' }}
-          >
-            {i + 1}
-          </Button>
+        {currentQuestions.map((q, index) => (
+          <div key={startIndex + index} style={{ marginBottom: '20px' }}>
+            <h4>{q.question}</h4>
+            <Form style={{ display: 'inline-block', textAlign: 'left' }}>
+              {q.options.map((option, i) => (
+                <Form.Check
+                  type="radio"
+                  label={option}
+                  name={`question-${startIndex + index}`}
+                  key={i}
+                  checked={answers[startIndex + index] === option}
+                  onChange={() => handleAnswer(index, option)}
+                />
+              ))}
+            </Form>
+          </div>
         ))}
-      </div>
 
-    </div>
+        {/* Pagination */}
+        <div style={{ marginBottom: '20px' }}>
+          {[...Array(totalPages)].map((_, i) => (
+            <Button
+              key={i}
+              variant={currentPage === i + 1 ? 'primary' : 'outline-primary'}
+              onClick={() => setCurrentPage(i + 1)}
+              style={{ margin: '0 5px' }}
+            >
+              {i + 1}
+            </Button>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
