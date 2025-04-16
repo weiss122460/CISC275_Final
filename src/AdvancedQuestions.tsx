@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { Button, ProgressBar, Form } from 'react-bootstrap';
+import NavBar from './navBar';
+import './AdvancedQuestions.css';
 
 const questions = [
   "What is your dream job and why?",
@@ -14,16 +15,18 @@ const questions = [
 const QUESTIONS_PER_PAGE = 3;
 
 const PageTwo: React.FC = () => {
-  const navigate = useNavigate();
   //an array of strings initally all set empty that correlates to the index of the 'questions' array const
   const [answers, setAnswers] = useState<string[]>(Array(questions.length).fill("")); 
   //an array of booleans meant to describe the status of the answers (whether its been answer or not)
   //each answer submitted answer will change the array to true to the correlating question answered
   const [submitted, setSubmitted] = useState<boolean[]>(Array(questions.length).fill(false));
-  //results will only be avaliable once all questions have been answers (the submitted array is all true)
-  const[results, setResults] = useState<boolean>(false);
+  //results text/information made by openAI and API key
+  const[results, setResults] = useState<string>("");
   //tabs to change pages to a different question
+ // const[results, setResults] = useState<boolean>(false);
+  //will allow the user to change the answer to one of the questions when given a button 
   const [currentPage, setCurrentPage] = useState(1);
+
 
 
   const handleAnswer = (index: number, value: string) => {
@@ -62,7 +65,9 @@ const PageTwo: React.FC = () => {
   const totalPages = Math.ceil(questions.length / QUESTIONS_PER_PAGE);
 
   return (
-    <div style={{ textAlign: 'center', padding: '20px' }}>
+    <div className ='advanced-questions'>
+      <NavBar />
+      <div className='body'>
       <h1>Career Quiz - Short Answer</h1>
       <ProgressBar now={progress} label={`${progress}%`} style={{ marginBottom: '20px' }} />
 
@@ -115,7 +120,7 @@ const PageTwo: React.FC = () => {
       disabled>
         Get Results!
       </Button>
-      <Button onClick={() => navigate("/")}>Go Back to Home</Button>
+    </div>
     </div>
   );
 };
