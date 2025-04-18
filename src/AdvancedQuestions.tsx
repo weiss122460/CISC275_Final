@@ -3,6 +3,7 @@ import { Button, ProgressBar, Form } from 'react-bootstrap';
 import NavBar from './navBar';
 import './AdvancedQuestions.css';
 
+//Advanced questions
 export const questions = [
   "What is your dream job and why?",
   "Describe a task or project that made you feel accomplished.",
@@ -13,24 +14,29 @@ export const questions = [
   "Where do you see yourself in 5 years?"
 ];
 
-const questionsPerPage = 4;
-const ANSWERS_KEY = 'advanced-quiz-answers';
+//key for local storage
+const userAnswers = 'advanced-quiz-answers';
+
 
 const PageTwo: React.FC = () => {
-  // Load from localStorage or initialize
+  // Load from local storage or initialize
   const [answers, setAnswers] = useState<string[]>(
-    () => JSON.parse(localStorage.getItem(ANSWERS_KEY) || 'null') ?? Array(questions.length).fill("")
+    () => JSON.parse(localStorage.getItem(userAnswers) || 'null') ?? Array(questions.length).fill("")
   );
   const [submitted, setSubmitted] = useState<boolean[]>(
     () => answers.map(ans => ans.trim() !== "")
   );
-  const [currentPage, setCurrentPage] = useState(1);
 
+  //page setup
+  const [currentPage, setCurrentPage] = useState(1);
+  const questionsPerPage = 4;
+
+  //handles responses
   const handleAnswer = (index: number, value: string) => {
     const newAnswers = [...answers];
     newAnswers[index] = value;
     setAnswers(newAnswers);
-    localStorage.setItem(ANSWERS_KEY, JSON.stringify(newAnswers));
+    localStorage.setItem(userAnswers, JSON.stringify(newAnswers));
   };
 
   const handleSubmit = (index: number) => {
@@ -49,11 +55,13 @@ const PageTwo: React.FC = () => {
     }
   };
 
+  //progress bar setup
   const progress: number = Math.round((submitted.filter(answer => answer).length / questions.length) * 100);
   const startIndex = (currentPage - 1) * questionsPerPage;
   const endIndex = startIndex + questionsPerPage;
   const totalPages = Math.ceil(questions.length / questionsPerPage);
 
+  //page content
   return (
     <div className='advanced-questions'>
       <NavBar />
