@@ -3,6 +3,8 @@ import { Button, ProgressBar, Form } from 'react-bootstrap';
 import NavBar from './navBar';
 import './BasicQuestions.css';
 
+
+//Basic questions
 export const questions = [
   {
     question: "What type of work environment do you prefer?",
@@ -35,30 +37,33 @@ export const questions = [
 ];
 
 // Key used for localStorage
-const ANSWERS_KEY = 'basic-quiz-answers';
+const userAnswers = 'basic-quiz-answers';
 
 const PageOne: React.FC = () => {
-  // Load saved answers from localStorage or initialize with nulls
+  // Load saved answers from local storage or initialize with nulls
   const [answers, setAnswers] = useState<(string | null)[]>(
-    () => JSON.parse(localStorage.getItem(ANSWERS_KEY) || 'null') ?? Array(questions.length).fill(null)
+    () => JSON.parse(localStorage.getItem(userAnswers) || 'null') ?? Array(questions.length).fill(null)
   );
-  const [currentPage, setCurrentPage] = useState(1);
 
+//page setup
+  const [currentPage, setCurrentPage] = useState(1);
   const questionsPerPage = 4;
   const totalPages = Math.ceil(questions.length / questionsPerPage);
-
   const startIndex = (currentPage - 1) * questionsPerPage;
   const currentQuestions = questions.slice(startIndex, startIndex + questionsPerPage);
 
+  //handles user inputs
   const handleAnswer = (index: number, option: string) => {
     const newAnswers = [...answers];
     newAnswers[startIndex + index] = option;
     setAnswers(newAnswers);
-    localStorage.setItem(ANSWERS_KEY, JSON.stringify(newAnswers)); // Save to localStorage
+    localStorage.setItem(userAnswers, JSON.stringify(newAnswers)); // Save to localStorage
   };
 
+  //progress bar calculation
   const progress = Math.round((answers.filter(answer => answer !== null).length / questions.length) * 100);
 
+  //page structure
   return (
     <div className='basic-questions'>
       <NavBar />
@@ -84,7 +89,7 @@ const PageOne: React.FC = () => {
           </div>
         ))}
 
-        {/* Pagination */}
+        {/* question select */}
         <div style={{ marginBottom: '20px' }}>
           {[...Array(totalPages)].map((_, i) => (
             <Button
