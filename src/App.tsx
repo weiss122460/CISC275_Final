@@ -7,6 +7,7 @@ import { questions as advancedQuestions } from './AdvancedQuestions';
 import PageOne from './BasicQuestions';
 import PageTwo from './AdvancedQuestions';
 import NavBar from './navBar';
+import Results from './results';
 
 const saveKeyData = "MYKEY";
 
@@ -41,7 +42,7 @@ const Home: React.FC = () => {
     const apiKey = getStoredKey();
     if (!apiKey) {
       alert("Please enter your API key first.");
-      return;
+      return null;
     }
   
     //gets copy of answers from question pages
@@ -55,7 +56,7 @@ const Home: React.FC = () => {
     //check for blank quiz answers
     if (allAnswers.length === 0 || allAnswers.some(ans => !ans || ans.trim() === "")) {
       alert("Please complete the quiz first.");
-      return;
+      return null;
     }
   
     //combines questions and answers into one array
@@ -91,15 +92,19 @@ const Home: React.FC = () => {
   
       const data = await response.json();
       const reply = data.choices?.[0]?.message?.content || "No reply.";
-      alert(reply); // could replace this with a results page
+      return reply;
     } catch (error) {
       console.error("OpenAI error:", error);
       alert("There was an error processing your request.");
     }
   };
   
-  
-  
+ const HandleResultsButton = async (): Promise<void> => {
+  const reply = await sendToOpenAI();
+  if (reply) {
+    navigate("/results", { state: { result: reply } });
+  }
+}
 
   return (
     <div className="App">
@@ -108,8 +113,8 @@ const Home: React.FC = () => {
         <img src={`${process.env.PUBLIC_URL}/logo192.png`} className="App-logo" alt="logo" />
         <p>Ryan Weiss, Ever Merino, Dylan Frajerman</p>
 
-        <Button onClick={() => navigate("/page-one")}>Go to Basic Questions</Button>
-        <Button onClick={() => navigate("/page-two")} style={{ marginLeft: '10px' }}>Go to Advanced Questions</Button>
+        <Button onClick={() => navigate("/basic-questions")}>Go to Basic Questions</Button>
+        <Button onClick={() => navigate("/advanced-questions")} style={{ marginLeft: '10px' }}>Go to Advanced Questions</Button>
 
         <Form style={{ marginTop: "20px" }}>
           <Form.Label className='api'>API Key:</Form.Label>
@@ -125,7 +130,7 @@ const Home: React.FC = () => {
 
        
         <Button
-          onClick={sendToOpenAI}
+          onClick={HandleResultsButton}
           variant="success"
           style={{ marginTop: "20px" }}
         >
@@ -141,8 +146,9 @@ const App: React.FC = () => (
   <Router>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/page-one" element={<PageOne />} />
-      <Route path="/page-two" element={<PageTwo />} />
+      <Route path="/basic-questions" element={<PageOne />} />
+      <Route path="/advanced-questions" element={<PageTwo />} />
+      <Route path="/results" element={<Results />} />
     </Routes>
   </Router>
 );
