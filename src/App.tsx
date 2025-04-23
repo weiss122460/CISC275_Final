@@ -67,7 +67,7 @@ const Home: React.FC = () => {
     });
     
     //prompt for chatGPT
-    const prompt = `Given the following career quiz responses, provide a brief career recommendation and explain your reasoning:\n\n${qaPairs.join("\n\n")}`;
+    const prompt = `Given the following career quiz responses, provide a brief career recommendation and explain your reasoning in a paragraph:\n\n${qaPairs.join("\n\n")}`;
     const tone = "You are a friendly and insightful career advisor. Your goal is to provide a personalized career suggestion based on the user's quiz responses";
     try {
       const response = await fetch("https://api.openai.com/v1/chat/completions", {
