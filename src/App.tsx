@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef  } from 'react';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
 import { HashRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'; 
@@ -26,6 +26,7 @@ const saveApiKey = (key: string) => {
 const Home: React.FC = () => {
   const navigate = useNavigate();
   const [key, setKey] = useState<string>("");
+  const gotRequest = useRef(false);
 
   // Load stored key
   useEffect(() => {
@@ -98,12 +99,15 @@ const Home: React.FC = () => {
       alert("There was an error processing your request.");
     }
   };
-  
+
  const HandleResultsButton = async (): Promise<void> => {
-  const reply = await sendToOpenAI();
-  if (reply) {
-    navigate("/results", { state: { result: reply } });
-  }
+  if (gotRequest.current) return;
+  gotRequest.current = true;
+    const reply = await sendToOpenAI();
+    if (reply) {
+      navigate("/results", { state: { result: reply } });
+    }
+    gotRequest.current = false;
 }
 
   return (
