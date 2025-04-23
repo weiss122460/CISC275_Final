@@ -21,11 +21,12 @@ const saveApiKey = (key: string) => {
   localStorage.setItem(saveKeyData, JSON.stringify(key));
 };
 
+//Define home component
 const Home: React.FC = () => {
   const navigate = useNavigate();
   const [key, setKey] = useState<string>("");
 
-  // Load stored key on mount
+  // Load stored key
   useEffect(() => {
     setKey(getStoredKey());
   }, []);
@@ -43,23 +44,29 @@ const Home: React.FC = () => {
       return;
     }
   
+    //gets copy of answers from question pages
     const basicAnswers = JSON.parse(localStorage.getItem("basic-quiz-answers") || '[]');
     const advancedAnswers = JSON.parse(localStorage.getItem("advanced-quiz-answers") || '[]');
+
+    //combines questions and answers into their own arrays
     const allAnswers = [...basicAnswers, ...advancedAnswers];
     const allQuestions = [...basicQuestions, ...advancedQuestions];
   
-    if (allAnswers.length === 0 || allAnswers.every(ans => !ans || ans.trim() === "")) {
+    //check for blank quiz answers
+    if (allAnswers.length === 0 || allAnswers.some(ans => !ans || ans.trim() === "")) {
       alert("Please complete the quiz first.");
       return;
     }
   
+    //combines questions and answers into one array
     const qaPairs = allQuestions.map((question, index) => {
       const answer = allAnswers[index] || "(No answer provided)";
       return `Q${index + 1}: ${question}\nA${index + 1}: ${answer}`;
     });
-  
+    
+    //prompt for chatGPT
     const prompt = `Given the following career quiz responses, provide a brief career recommendation and explain your reasoning:\n\n${qaPairs.join("\n\n")}`;
-  
+    const tone = "You are a friendly and insightful career advisor. Your goal is to provide a personalized career suggestion based on the user's quiz responses";
     try {
       const response = await fetch("https://api.openai.com/v1/chat/completions", {
         method: "POST",
@@ -68,11 +75,11 @@ const Home: React.FC = () => {
           Authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
-          model: "gpt-3.5-turbo",
+          model: "gpt-4.1",
           messages: [
             {
               role: "system",
-              content: "You are a friendly and insightful career advisor. Your goal is to provide a personalized career suggestion based on the user's quiz responses",
+              content: tone
             },
             {
               role: "user",
@@ -100,7 +107,6 @@ const Home: React.FC = () => {
       <header className="App-header">
         <img src={`${process.env.PUBLIC_URL}/logo192.png`} className="App-logo" alt="logo" />
         <p>Ryan Weiss, Ever Merino, Dylan Frajerman</p>
-        <p>Edit <code>src/App.tsx</code> and save to reload.</p>
 
         <Button onClick={() => navigate("/page-one")}>Go to Basic Questions</Button>
         <Button onClick={() => navigate("/page-two")} style={{ marginLeft: '10px' }}>Go to Advanced Questions</Button>
