@@ -7,6 +7,7 @@ import { questions as advancedQuestions } from './AdvancedQuestions';
 import PageOne from './BasicQuestions';
 import PageTwo from './AdvancedQuestions';
 import NavBar from './navBar';
+import TalentLogo from  './images/TalentLogo.png';
 
 const saveKeyData = "MYKEY";
 
@@ -105,12 +106,8 @@ const Home: React.FC = () => {
     <div className="App">
       <NavBar />
       <header className="App-header">
-        <img src={`${process.env.PUBLIC_URL}/logo192.png`} className="App-logo" alt="logo" />
+        <img src={TalentLogo} className="App-logo" width='350px' alt='logo' />
         <p>Ryan Weiss, Ever Merino, Dylan Frajerman</p>
-
-        <Button onClick={() => navigate("/page-one")}>Go to Basic Questions</Button>
-        <Button onClick={() => navigate("/page-two")} style={{ marginLeft: '10px' }}>Go to Advanced Questions</Button>
-
         <Form style={{ marginTop: "20px" }}>
           <Form.Label className='api'>API Key:</Form.Label>
           <Form.Control
@@ -122,7 +119,7 @@ const Home: React.FC = () => {
           <br />
           <Button className="Submit-Button" onClick={handleSubmit}>Submit API Key</Button>
         </Form>
-
+        
        
         <Button
           onClick={sendToOpenAI}
@@ -132,7 +129,18 @@ const Home: React.FC = () => {
           Analyze My Results
         </Button>
       </header>
+      <div className="questions-div">
+      <div className="basic-div">
+      <Button onClick={() => navigate("/page-one")}>Go to Basic Questions</Button>
+      </div>
+
+      <div className="detailed-div">
+      <Button onClick={() => navigate("/page-two")} style={{ marginLeft: '10px' }}>Go to Advanced Questions</Button>
+      </div>
+      </div>
     </div>
+
+    
   );
 };
 
