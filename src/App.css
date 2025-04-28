@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap');
 
 .App {
   text-align: center;
@@ -9,11 +9,19 @@
   padding-bottom: 20px;
   color: white;
   display: flex ;
+  font-family: Tagesschrift;
+  font-size: large;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.6);
 
 
 }
+
+.App-logo {
+  float: right;
+  margin-right: 20px;
+}
+
 
 /*.App-logo {
   height: 40vmin;
@@ -27,16 +35,20 @@
 }*/
 
 .App-header {
-  background-color: rgba(111, 110, 110, 0.6);
+  background-color: rgba(111, 110, 110, 0.85);
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0 0 20px #000;
   width: 75%;
-  align-self: center ;
+  align-self: center;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.homepage-container{
+  display: flex
 }
 
 @keyframes App-logo-spin {
@@ -112,6 +124,7 @@
   justify-content: space-between;
 }
 
-.testMove{
-  background-repeat: repeat;
+.homepage-logo{
+  background-color: aqua;
+
 }
