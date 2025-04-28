@@ -47,9 +47,7 @@ const PageTwo: React.FC = () => {
     }
   };
 
-  function handleResults(){
-    
-  }
+
 
   const handleChangeAnswer = (index: number) => {
     if (answers[index].trim() !== "") {
