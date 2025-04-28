@@ -7,13 +7,15 @@
   background-size: cover;
   min-height: 100vh;
   padding-bottom: 20px;
+  width: 100%;
   color: white;
   display: flex ;
   font-family: Tagesschrift;
   font-size: large;
   flex-direction: column;
   background-color: rgba(0, 0, 0, 0.6);
-
+  overflow-x: hidden;
+  
 
 }
 
@@ -41,8 +43,92 @@
   box-shadow: 0 0 20px #000;
   width: 75%;
   align-self: center;
+  
 }
 
+.bird-few{
+  width:0px;
+  height: 0px;
+  position: relative;
+  animation-name: bird-few;
+  animation-duration: 90s;
+  animation-iteration-count: infinite;
+  max-width: 40%;
+  pointer-events: none;
+}
+
+@keyframes bird-few {
+  0%   {left:-900px; top:-70px;}
+  100%  {left:100%; top:-70px;}
+}
+
+.bird-all{
+  width:0px;
+  height: 0px;
+  position: relative;
+  animation-name: bird-all;
+  animation-duration: 40s;
+  animation-iteration-count: infinite;
+  max-width: 40%;
+  pointer-events: none;
+  opacity: 0.4;
+
+}
+
+@keyframes bird-all {
+  0%   {left:-1000px; top:-60px;}
+  100%  {left:100%; top:-60px;}
+}
+
+
+.moving-clouds{
+  width:0%;
+  height: 0px;
+  position: relative;
+  animation-name: moving-clouds;
+  animation-duration: 75s;
+  animation-iteration-count: infinite;
+  max-width: 40%;
+}
+
+@keyframes moving-clouds {
+  0%   {left:-400px; top:-10px;}
+  100%  {left:100%; top:-10px;}
+}
+
+.moving-clouds-fast{
+  width:0px;
+  height: 0px;
+  position: relative;
+  animation-name: moving-clouds-fast;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+  max-width: 40%;
+  pointer-events: none;
+  z-index: 6;
+}
+
+@keyframes moving-clouds-fast {
+  0%   {left:-400px; top:-100px;}
+  100%  {left:100%; top:-100px;}
+}
+
+.moving-clouds-slow{
+  width:0px;
+  height: 0px;
+  position: relative;
+  animation-name: moving-clouds-slow;
+  animation-duration: 80s;
+  animation-iteration-count: infinite;
+  max-width: 40%;
+  pointer-events: none;
+  z-index: 6;
+}
+
+@keyframes moving-clouds-slow {
+  0%   {left:-900px; top:0px;}
+  100%  {left:100%; top:0px;}
+}
 .App-link {
   color: #61dafb;
 }
