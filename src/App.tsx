@@ -115,7 +115,16 @@ const Home: React.FC = () => {
     <div className="App">
       <NavBar />
       <header className="App-header">
-        <img src={TalentLogo} className="App-logo" width='350px' alt='logo' />
+      Welcome to your Talent Trail!,
+      
+       where each step is a climb toward the peak of your potential. 
+      Just like scaling a mountain, finding the right path requires preparation, perseverance,
+      and the right guidance. Whether you're searching for the perfect route, navigating obstacles, 
+      or reaching for new heights, we're here to equip you with the tools, insights, and support 
+      to make your ascent successful. No matter where you start, every climb leads to discovery—of 
+      your skills, passions, and the career that truly fits. Lets chart your course and conquer 
+      your summit together.
+        <img src={TalentLogo} className="App-logo" width='350px' alt='logo' align-self='right'/>
         <p>Ryan Weiss, Ever Merino, Dylan Frajerman</p>
         <Form style={{ marginTop: "20px" }}>
           <Form.Label className='api'>API Key:</Form.Label>
@@ -158,8 +167,8 @@ const App: React.FC = () => (
   <Router>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/basic-questions" element={<PageOne />} />
-      <Route path="/advanced-questions" element={<PageTwo />} />
+      <Route path="/page-one" element={<PageOne />} />
+      <Route path="/page-two" element={<PageTwo />} />
       <Route path="/results" element={<Results />} />
     </Routes>
   </Router>

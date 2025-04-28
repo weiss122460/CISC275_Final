@@ -6,12 +6,12 @@
   background-image: url(C:\Users\ever1\OneDrive\Desktop\CISC275\CISC275_Final\src\images\HomepageDesign.png);
   background-size: cover;
   min-height: 100vh;
-  padding: 20px;
+  padding-bottom: 20px;
   color: white;
   display: flex ;
   flex-direction: column;
-
   background-color: rgba(0, 0, 0, 0.6);
+
 
 }
 
@@ -27,11 +27,11 @@
 }*/
 
 .App-header {
-  background-color: rgba(150, 43, 43, 0.6);
+  background-color: rgba(111, 110, 110, 0.6);
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0 0 20px #000;
-  max-width: 90%;
+  width: 75%;
   align-self: center ;
 }
 
@@ -48,16 +48,21 @@
   }
 }
 
+
 /* NavBar.css */
 .navbar-custom {
-  background-color: rgba(135, 135, 135, 0.6);
+  background-color: rgba(135, 135, 135, 0.85);
   padding: 5px;
   border-radius: 20px;
-  box-shadow: 0 0 20px #000;
+  box-shadow: 0 0 10px #000;
   margin-bottom: 30px; 
+  width: 110%;
+  display: inline-block;
   align-self: center;
-  max-width: 90%;
+  align-content: center;
+  padding-left: 40%;
 }
+
 .navbar-custom .navLogo {
   border-radius: 50%;
   margin-right: 10px;
@@ -105,4 +110,8 @@
   padding-right: 10%;
   display: flex;
   justify-content: space-between;
+}
+
+.testMove{
+  background-repeat: repeat;
 }
