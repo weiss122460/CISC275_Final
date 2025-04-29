@@ -3,7 +3,7 @@
 .App {
   text-align: center;
   background: url('/public/background.png') no-repeat center center fixed;
-  background-image: url(C:\Users\ever1\OneDrive\Desktop\CISC275\CISC275_Final\src\images\HomepageDesign.png);
+  background-image: url('/src/images/HomepageDesign.png');
   background-size: cover;
   min-height: 100vh;
   padding-bottom: 20px;
