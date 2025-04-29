@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Card, Button, Container } from 'react-bootstrap';
+import './results.css';
 
 // Simple Markdown-like bolding for **text**
 const parseMarkdownBold = (text: string) => {
@@ -19,26 +20,15 @@ const Results: React.FC = () => {
   const resultText = location.state?.result || "No result found.";
 
   return (
-    <Container style={{ paddingTop: '3rem', maxWidth: '700px' }}>
-      <Card>
+    <Container className="results-container">
+      <Card className="results-card">
         <Card.Body>
-          <Card.Title>Your Career Recommendation</Card.Title>
-          <div
-            style={{
-              maxHeight: '70vh',
-              overflowY: 'auto',
-              whiteSpace: 'pre-wrap',
-              padding: '0.5rem',
-              marginBottom: '1rem',
-              border: '1px solid #eee',
-              borderRadius: '0.25rem',
-              background: '#f8f9fa',
-            }}
-          >
+          <Card.Title className="results-title">Your Career Recommendation</Card.Title>
+          <div className="results-content">
             {parseMarkdownBold(resultText)}
           </div>
-          <div className="d-flex justify-content-end">
-            <Button variant="primary" onClick={() => navigate("/")}>
+          <div className="results-button">
+            <Button variant="success" onClick={() => navigate("/")}>
               Back to Home
             </Button>
           </div>
