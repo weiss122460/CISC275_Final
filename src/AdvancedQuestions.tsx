@@ -47,6 +47,8 @@ const PageTwo: React.FC = () => {
     }
   };
 
+
+
   const handleChangeAnswer = (index: number) => {
     if (answers[index].trim() !== "") {
       const newSubmitted = [...submitted];

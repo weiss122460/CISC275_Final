@@ -7,8 +7,12 @@ import { questions as advancedQuestions } from './AdvancedQuestions';
 import PageOne from './BasicQuestions';
 import PageTwo from './AdvancedQuestions';
 import NavBar from './navBar';
+import TalentLogo from  './images/TalentLogo.png';
 import Results from './results';
-
+import clouds from './images/clouds.png';
+//import birdFlock from './images/birdFlock.gif'
+import birdAll from './images/birdAll.gif'
+import birdFew from './images/birdsFew.gif'
 const saveKeyData = "MYKEY";
 
 const getStoredKey = (): string => {
@@ -97,27 +101,40 @@ const Home: React.FC = () => {
   return (
     <div className="App">
       <NavBar />
+
+      <div className='bird-few'>
+        <img src={birdFew} alt='bird-few' height='150px'></img>
+      </div>
+
+      <div className='bird-all'>
+        <img src={birdAll} alt='bird-all' height='200px'></img>
+      </div>
+
+      <div className="moving-clouds" >
+        <img src={clouds} alt='clouds' height='250px' style={{opacity: '0.4'}}></img>
+      </div>
+      <div className="moving-clouds-fast">
+        <img src={clouds} alt='clouds-fast' height='200px' style={{opacity: '0.8'}}></img>
+      </div>
+      <div className="moving-clouds-slow">
+        <img src={clouds} alt='clouds-slow' height='250px' style={{opacity: '0.5'}}></img>
+      </div>
+
+
       <header className="App-header">
-        <img src={`${process.env.PUBLIC_URL}/logo192.png`} className="App-logo" alt="logo" />
+      <div className='homepage-container'>
+      <p style={{display: 'flex'}}>Welcome to your Talent Trail! Discover your potential and find the right career path for you
+      with our company. Whether you have a general idea about what you want to do, or have no idea what is 
+      out there, we are sure to provide you some insight in the right direction for your future. We know
+      it can be daunting trying to find the perfect job, which is why here at Talent Trail, we're viewing
+      this as a mountainous climb and provide you with two options for your career assessment. One basic 
+      assessment if you're in a hurry, and one detailed assessment if you really want some insight into your
+      possible future career. 
+      </p>
+
+        <img src={TalentLogo} className="App-logo" width='350px'  style={{ float: "right", marginRight: "20px", padding: '30px', zIndex:4}} alt='logo'/>
+</div>
         <p>Ryan Weiss, Ever Merino, Dylan Frajerman</p>
-
-        <Button
-          variant="success"
-          className="glow-button"
-          onClick={() => navigate("/basic-questions")}
-        >
-          Go to Basic Questions
-        </Button>
-
-        <Button
-          variant="success"
-          className="glow-button"
-          onClick={() => navigate("/advanced-questions")}
-          style={{ marginLeft: '10px' }}
-        >
-          Go to Advanced Questions
-        </Button>
-
         <Form style={{ marginTop: "20px" }}>
           <Form.Label className='api'>API Key:</Form.Label>
           <Form.Control
@@ -135,7 +152,8 @@ const Home: React.FC = () => {
             Submit API Key
           </Button>
         </Form>
-
+        
+       
         <Button
           onClick={HandleResultsButton}
           variant="success"
@@ -145,7 +163,18 @@ const Home: React.FC = () => {
           Analyze My Results
         </Button>
       </header>
+      <div className="questions-div">
+      <div className="basic-div">
+      <Button onClick={() => navigate("/page-one")}>Go to Basic Questions</Button>
+      </div>
+
+      <div className="detailed-div">
+      <Button onClick={() => navigate("/page-two")} style={{ marginLeft: '10px' }}>Go to Advanced Questions</Button>
+      </div>
+      </div>
     </div>
+
+    
   );
 };
 
@@ -153,8 +182,8 @@ const App: React.FC = () => (
   <Router>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/basic-questions" element={<PageOne />} />
-      <Route path="/advanced-questions" element={<PageTwo />} />
+      <Route path="/page-one" element={<PageOne />} />
+      <Route path="/page-two" element={<PageTwo />} />
       <Route path="/results" element={<Results />} />
     </Routes>
   </Router>
