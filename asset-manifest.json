@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/CISC275_Final/static/css/main.a73e73b0.css",
-    "main.js": "/CISC275_Final/static/js/main.4132fd90.js",
+    "main.css": "/CISC275_Final/static/css/main.ee98329b.css",
+    "main.js": "/CISC275_Final/static/js/main.a9625ba2.js",
     "static/js/453.bad6c33a.chunk.js": "/CISC275_Final/static/js/453.bad6c33a.chunk.js",
     "static/media/clouds.png": "/CISC275_Final/static/media/clouds.c59301c7fdc82dfaa79f.png",
     "static/media/HomepageDesign.png": "/CISC275_Final/static/media/HomepageDesign.a1bdcaefe81a7ee859c2.png",
     "static/media/birdAll.gif": "/CISC275_Final/static/media/birdAll.737897c58ccfc9157f5f.gif",
     "static/media/background.png": "/CISC275_Final/static/media/background.832a001514eddc44a37d.png",
     "static/media/birdsFew.gif": "/CISC275_Final/static/media/birdsFew.fa3bd4a019f9369d73e6.gif",
+    "static/media/darkStone.jpg": "/CISC275_Final/static/media/darkStone.23f4f00de4d0b36c6aa3.jpg",
     "static/media/TalentLogo.png": "/CISC275_Final/static/media/TalentLogo.8458e4542185667b19ea.png",
     "index.html": "/CISC275_Final/index.html",
-    "main.a73e73b0.css.map": "/CISC275_Final/static/css/main.a73e73b0.css.map",
-    "main.4132fd90.js.map": "/CISC275_Final/static/js/main.4132fd90.js.map",
+    "main.ee98329b.css.map": "/CISC275_Final/static/css/main.ee98329b.css.map",
+    "main.a9625ba2.js.map": "/CISC275_Final/static/js/main.a9625ba2.js.map",
     "453.bad6c33a.chunk.js.map": "/CISC275_Final/static/js/453.bad6c33a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a73e73b0.css",
-    "static/js/main.4132fd90.js"
+    "static/css/main.ee98329b.css",
+    "static/js/main.a9625ba2.js"
   ]
 }

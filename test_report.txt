@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (64 ms)
+  ✕ renders learn react link (63 ms)
 
   ● renders learn react link
 
@@ -141,7 +141,7 @@ FAIL src/App.test.tsx
                 [33malt[39m=[32m"logo"[39m
                 [33mclass[39m=[32m"App-logo"[39m
                 [33msrc[39m=[32m"TalentLogo.png"[39m
-                [33mstyle[39m=[32m"float: right; margin-right: 20px; padding: 30px; z-index: 4;"[39m
+                [33mstyle[39m=[32m"float: right; margin-right: 20px; padding: 30px; z-index: 4; border-radius: 50px;"[39m
                 [33mwidth[39m=[32m"350px"[39m
               [36m/>[39m
             [36m</div>[39m
@@ -241,5 +241,5 @@ All files              |   19.44 |     1.92 |   10.63 |   20.14 |
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.752 s
+Time:        2.536 s
 Ran all test suites.
