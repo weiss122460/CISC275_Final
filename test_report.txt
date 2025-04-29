@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (57 ms)
+  ✕ renders learn react link (64 ms)
 
   ● renders learn react link
 
@@ -21,11 +21,17 @@ FAIL src/App.test.tsx
             [36m<div[39m
               [33mclass[39m=[32m"container"[39m
             [36m>[39m
+              [36m<img[39m
+                [33malt[39m=[32m"logo"[39m
+                [33mclass[39m=[32m"navLogo"[39m
+                [33msrc[39m=[32m"TalentLogo.png"[39m
+                [33mwidth[39m=[32m"50px"[39m
+              [36m/>[39m
               [36m<span[39m
                 [33mclass[39m=[32m"navbar-brand"[39m
                 [33mstyle[39m=[32m"cursor: pointer;"[39m
               [36m>[39m
-                [0mMyWebsite[0m
+                [0mTalentTrail[0m
               [36m</span>[39m
               [36m<button[39m
                 [33maria-controls[39m=[32m"basic-navbar-nav"[39m
@@ -72,30 +78,76 @@ FAIL src/App.test.tsx
               [36m</div>[39m
             [36m</div>[39m
           [36m</nav>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bird-few"[39m
+          [36m>[39m
+            [36m<img[39m
+              [33malt[39m=[32m"bird-few"[39m
+              [33mheight[39m=[32m"150px"[39m
+              [33msrc[39m=[32m"birdsFew.gif"[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"bird-all"[39m
+          [36m>[39m
+            [36m<img[39m
+              [33malt[39m=[32m"bird-all"[39m
+              [33mheight[39m=[32m"200px"[39m
+              [33msrc[39m=[32m"birdAll.gif"[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"moving-clouds"[39m
+          [36m>[39m
+            [36m<img[39m
+              [33malt[39m=[32m"clouds"[39m
+              [33mheight[39m=[32m"250px"[39m
+              [33msrc[39m=[32m"clouds.png"[39m
+              [33mstyle[39m=[32m"opacity: 0.4;"[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"moving-clouds-fast"[39m
+          [36m>[39m
+            [36m<img[39m
+              [33malt[39m=[32m"clouds-fast"[39m
+              [33mheight[39m=[32m"200px"[39m
+              [33msrc[39m=[32m"clouds.png"[39m
+              [33mstyle[39m=[32m"opacity: 0.8;"[39m
+            [36m/>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"moving-clouds-slow"[39m
+          [36m>[39m
+            [36m<img[39m
+              [33malt[39m=[32m"clouds-slow"[39m
+              [33mheight[39m=[32m"250px"[39m
+              [33msrc[39m=[32m"clouds.png"[39m
+              [33mstyle[39m=[32m"opacity: 0.5;"[39m
+            [36m/>[39m
+          [36m</div>[39m
           [36m<header[39m
             [33mclass[39m=[32m"App-header"[39m
           [36m>[39m
-            [36m<img[39m
-              [33malt[39m=[32m"logo"[39m
-              [33mclass[39m=[32m"App-logo"[39m
-              [33msrc[39m=[32m"/logo192.png"[39m
-            [36m/>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"homepage-container"[39m
+            [36m>[39m
+              [36m<p[39m
+                [33mstyle[39m=[32m"display: flex;"[39m
+              [36m>[39m
+                [0mWelcome to your Talent Trail! Discover your potential and find the right career path for you with our company. Whether you have a general idea about what you want to do, or have no idea what is out there, we are sure to provide you some insight in the right direction for your future. We know it can be daunting trying to find the perfect job, which is why here at Talent Trail, we're viewing this as a mountainous climb and provide you with two options for your career assessment. One basic assessment if you're in a hurry, and one detailed assessment if you really want some insight into your possible future career.[0m
+              [36m</p>[39m
+              [36m<img[39m
+                [33malt[39m=[32m"logo"[39m
+                [33mclass[39m=[32m"App-logo"[39m
+                [33msrc[39m=[32m"TalentLogo.png"[39m
+                [33mstyle[39m=[32m"float: right; margin-right: 20px; padding: 30px; z-index: 4;"[39m
+                [33mwidth[39m=[32m"350px"[39m
+              [36m/>[39m
+            [36m</div>[39m
             [36m<p>[39m
               [0mRyan Weiss, Ever Merino, Dylan Frajerman[0m
             [36m</p>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mGo to Basic Questions[0m
-            [36m</button>[39m
-            [36m<button[39m
-              [33mclass[39m=[32m"btn btn-primary"[39m
-              [33mstyle[39m=[32m"margin-left: 10px;"[39m
-              [33mtype[39m=[32m"button"[39m
-            [36m>[39m
-              [0mGo to Advanced Questions[0m
-            [36m</button>[39m
             [36m<form[39m
               [33mclass[39m=[32m""[39m
               [33mstyle[39m=[32m"margin-top: 20px;"[39m
@@ -113,31 +165,56 @@ FAIL src/App.test.tsx
               [36m/>[39m
               [36m<br />[39m
               [36m<button[39m
-                [33mclass[39m=[32m"Submit-Button btn btn-primary"[39m
+                [33mclass[39m=[32m"Submit-Button glow-button btn btn-success"[39m
                 [33mtype[39m=[32m"button"[39m
               [36m>[39m
                 [0mSubmit API Key[0m
               [36m</button>[39m
             [36m</form>[39m
             [36m<button[39m
-              [33mclass[39m=[32m"btn btn-success"[39m
+              [33mclass[39m=[32m"glow-button btn btn-success"[39m
               [33mstyle[39m=[32m"margin-top: 20px;"[39m
               [33mtype[39m=[32m"button"[39m
             [36m>[39m
               [0mAnalyze My Results[0m
             [36m</button>[39m
           [36m</header>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"questions-div"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"basic-div"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn btn-primary"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mGo to Basic Questions[0m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"detailed-div"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"btn btn-primary"[39m
+                [33mstyle[39m=[32m"margin-left: 10px;"[39m
+                [33mtype[39m=[32m"button"[39m
+              [36m>[39m
+                [0mGo to Advanced Questions[0m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
         [36m</div>[39m
       [36m</div>[39m
     [36m</body>[39m
 
-       5 | test('renders learn react link', () => {
-       6 |   render(<App />);
-    >  7 |   const linkElement = screen.getByText(/learn react/i);
-         |                              ^
-       8 |   expect(linkElement).toBeInTheDocument();
-       9 | });
-      10 |
+    [0m [90m  5 |[39m test([32m'renders learn react link'[39m[33m,[39m () [33m=>[39m {
+     [90m  6 |[39m   render([33m<[39m[33mApp[39m [33m/[39m[33m>[39m)[33m;[39m
+    [31m[1m>[22m[39m[90m  7 |[39m   [36mconst[39m linkElement [33m=[39m screen[33m.[39mgetByText([35m/learn react/i[39m)[33m;[39m
+     [90m    |[39m                              [31m[1m^[22m[39m
+     [90m  8 |[39m   expect(linkElement)[33m.[39mtoBeInTheDocument()[33m;[39m
+     [90m  9 |[39m })[33m;[39m
+     [90m 10 |[39m[0m
 
       at Object.getElementError (node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/config.js:37:19)
       at node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:76:38
@@ -149,32 +226,20 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
------------------------|---------|----------|---------|---------|-----------------------------
-File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s           
------------------------|---------|----------|---------|---------|-----------------------------
-All files              |   19.44 |     1.92 |   10.63 |   20.14 |                             
- AdvancedQuestions.tsx |    7.89 |        0 |       0 |    8.33 | 23-110                      
- App.tsx               |   32.07 |     4.54 |   30.76 |   33.33 | 22,38,43-99,104-110,120-129 
- BasicQuestions.tsx    |   13.04 |        0 |       0 |   13.63 | 44-98                       
- index.tsx             |       0 |      100 |     100 |       0 | 7-19                        
- navBar.tsx            |   42.85 |      100 |      20 |   42.85 | 13-23                       
- reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10                        
- results.tsx           |   16.66 |        0 |       0 |   16.66 | 7-12,17-41                  
------------------------|---------|----------|---------|---------|-----------------------------
+-----------------------|---------|----------|---------|---------|---------------------------
+File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s         
+-----------------------|---------|----------|---------|---------|---------------------------
+All files              |   19.44 |     1.92 |   10.63 |   20.14 |                           
+ AdvancedQuestions.tsx |    7.89 |        0 |       0 |    8.33 | 23-112                    
+ App.tsx               |   32.07 |     4.54 |   30.76 |   33.33 | 24,37,41-87,92-98,144-172 
+ BasicQuestions.tsx    |   13.04 |        0 |       0 |   13.63 | 44-98                     
+ index.tsx             |       0 |      100 |     100 |       0 | 8-22                      
+ navBar.tsx            |   42.85 |      100 |      20 |   42.85 | 15-25                     
+ reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10                      
+ results.tsx           |   16.66 |        0 |       0 |   16.66 | 8-13,18-31                
+-----------------------|---------|----------|---------|---------|---------------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.001 s
+Time:        2.752 s
 Ran all test suites.
-[0;33mOne of your dependencies, babel-preset-react-app, is importing the
-"@babel/plugin-proposal-private-property-in-object" package without
-declaring it in its dependencies. This is currently working because
-"@babel/plugin-proposal-private-property-in-object" is already in your
-node_modules folder for unrelated reasons, but it [1mmay break at any time[0;33m.
-
-babel-preset-react-app is part of the create-react-app project, [1mwhich
-is not maintianed anymore[0;33m. It is thus unlikely that this bug will
-ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
-your devDependencies to work around this error. This will make this message
-go away.[0m
-  
