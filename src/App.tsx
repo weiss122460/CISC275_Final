@@ -132,7 +132,7 @@ const Home: React.FC = () => {
       possible future career. 
       </p>
 
-        <img src={TalentLogo} className="App-logo" width='350px'  style={{ float: "right", marginRight: "20px", padding: '30px', zIndex:4}} alt='logo'/>
+        <img src={TalentLogo} className="App-logo" width='350px'  style={{ float: "right", marginRight: "20px", padding: '30px', zIndex:4, borderRadius:'50px'}} alt='logo'/>
 </div>
         <p>Ryan Weiss, Ever Merino, Dylan Frajerman</p>
         <Form style={{ marginTop: "20px" }}>
@@ -165,7 +165,7 @@ const Home: React.FC = () => {
       </header>
       <div className="questions-div">
       <div className="basic-div">
-      <Button onClick={() => navigate("/page-one")}>Go to Basic Questions</Button>
+      <Button onClick={() => navigate("/page-one") }>Go to Basic Questions</Button>
       </div>
 
       <div className="detailed-div">
