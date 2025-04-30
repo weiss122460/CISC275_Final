@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/CISC275_Final/static/css/main.ee98329b.css",
-    "main.js": "/CISC275_Final/static/js/main.a9625ba2.js",
+    "main.css": "/CISC275_Final/static/css/main.a3649778.css",
+    "main.js": "/CISC275_Final/static/js/main.0a7f5862.js",
     "static/js/453.bad6c33a.chunk.js": "/CISC275_Final/static/js/453.bad6c33a.chunk.js",
     "static/media/clouds.png": "/CISC275_Final/static/media/clouds.c59301c7fdc82dfaa79f.png",
     "static/media/HomepageDesign.png": "/CISC275_Final/static/media/HomepageDesign.a1bdcaefe81a7ee859c2.png",
@@ -11,12 +11,12 @@
     "static/media/darkStone.jpg": "/CISC275_Final/static/media/darkStone.23f4f00de4d0b36c6aa3.jpg",
     "static/media/TalentLogo.png": "/CISC275_Final/static/media/TalentLogo.8458e4542185667b19ea.png",
     "index.html": "/CISC275_Final/index.html",
-    "main.ee98329b.css.map": "/CISC275_Final/static/css/main.ee98329b.css.map",
-    "main.a9625ba2.js.map": "/CISC275_Final/static/js/main.a9625ba2.js.map",
+    "main.a3649778.css.map": "/CISC275_Final/static/css/main.a3649778.css.map",
+    "main.0a7f5862.js.map": "/CISC275_Final/static/js/main.0a7f5862.js.map",
     "453.bad6c33a.chunk.js.map": "/CISC275_Final/static/js/453.bad6c33a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ee98329b.css",
-    "static/js/main.a9625ba2.js"
+    "static/css/main.a3649778.css",
+    "static/js/main.0a7f5862.js"
   ]
 }
