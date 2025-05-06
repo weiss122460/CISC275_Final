@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, ProgressBar, Form } from 'react-bootstrap';
 import NavBar from './navBar';
+import { Alert } from 'react-bootstrap';
 import './BasicQuestions.css';
 
 
@@ -40,36 +41,48 @@ export const questions = [
 const userAnswers = 'basic-quiz-answers';
 
 const PageOne: React.FC = () => {
-  // Load saved answers from local storage or initialize with nulls
   const [answers, setAnswers] = useState<(string | null)[]>(
     () => JSON.parse(localStorage.getItem(userAnswers) || 'null') ?? Array(questions.length).fill(null)
   );
 
-//page setup
   const [currentPage, setCurrentPage] = useState(1);
   const questionsPerPage = 4;
   const totalPages = Math.ceil(questions.length / questionsPerPage);
   const startIndex = (currentPage - 1) * questionsPerPage;
   const currentQuestions = questions.slice(startIndex, startIndex + questionsPerPage);
 
-  //handles user inputs
+  const [showCompletionMessage, setShowCompletionMessage] = useState(false); // 👈 New state
+
+  // Watch for completion
+  React.useEffect(() => {
+    if (answers.every((a) => a !== null)) {
+      setShowCompletionMessage(true);
+    } else {
+      setShowCompletionMessage(false);
+    }
+  }, [answers]);
+
   const handleAnswer = (index: number, option: string) => {
     const newAnswers = [...answers];
     newAnswers[startIndex + index] = option;
     setAnswers(newAnswers);
-    localStorage.setItem(userAnswers, JSON.stringify(newAnswers)); // Save to localStorage
+    localStorage.setItem(userAnswers, JSON.stringify(newAnswers));
   };
 
-  //progress bar calculation
   const progress = Math.round((answers.filter(answer => answer !== null).length / questions.length) * 100);
 
-  //page structure
   return (
     <div className='basic-questions'>
       <NavBar />
       <div className='body'>
         <h1>Career Quiz</h1>
         <ProgressBar now={progress} label={`${progress}%`} style={{ marginBottom: '20px' }} />
+
+        {showCompletionMessage && (
+          <Alert variant="success">
+            🎉 You've completed all the basic questions! Well done!
+          </Alert>
+        )}
 
         {currentQuestions.map((q, index) => (
           <div key={startIndex + index} style={{ marginBottom: '20px' }}>
@@ -89,7 +102,7 @@ const PageOne: React.FC = () => {
           </div>
         ))}
 
-        {/* question select */}
+        {/* Page navigation */}
         <div style={{ marginBottom: '20px' }}>
           {[...Array(totalPages)].map((_, i) => (
             <Button
@@ -106,5 +119,6 @@ const PageOne: React.FC = () => {
     </div>
   );
 };
+
 
 export default PageOne;

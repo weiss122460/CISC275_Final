@@ -1,6 +1,7 @@
 import React, { useState} from 'react';
 import { Button, ProgressBar, Form } from 'react-bootstrap';
 import NavBar from './navBar';
+import { Alert } from 'react-bootstrap';
 import './AdvancedQuestions.css';
 
 //Advanced questions
@@ -26,12 +27,22 @@ const PageTwo: React.FC = () => {
   const [submitted, setSubmitted] = useState<boolean[]>(
     () => answers.map(ans => ans.trim() !== "")
   );
+  const [showCompletionMessage, setShowCompletionMessage] = useState(false); // 👈 New state
 
   //page setup
   const [currentPage, setCurrentPage] = useState(1);
   const questionsPerPage = 4;
 
-  //handles responses
+  // Effect to check for completion
+  React.useEffect(() => {
+    if (submitted.every((s) => s)) {
+      setShowCompletionMessage(true);
+    } else {
+      setShowCompletionMessage(false);
+    }
+  }, [submitted]);
+
+  // handles responses
   const handleAnswer = (index: number, value: string) => {
     const newAnswers = [...answers];
     newAnswers[index] = value;
@@ -47,8 +58,6 @@ const PageTwo: React.FC = () => {
     }
   };
 
-
-
   const handleChangeAnswer = (index: number) => {
     if (answers[index].trim() !== "") {
       const newSubmitted = [...submitted];
@@ -57,19 +66,23 @@ const PageTwo: React.FC = () => {
     }
   };
 
-  //progress bar setup
   const progress: number = Math.round((submitted.filter(answer => answer).length / questions.length) * 100);
   const startIndex = (currentPage - 1) * questionsPerPage;
   const endIndex = startIndex + questionsPerPage;
   const totalPages = Math.ceil(questions.length / questionsPerPage);
 
-  //page content
   return (
     <div className='advanced-questions'>
       <NavBar />
       <div className='body'>
         <h1>Career Quiz - Short Answer</h1>
         <ProgressBar now={progress} label={`${progress}%`} style={{ marginBottom: '20px' }} />
+
+        {showCompletionMessage && (
+          <Alert variant="success">
+            🎉 You've completed all the advanced questions! Great job!
+          </Alert>
+        )}
 
         {questions.slice(startIndex, endIndex).map((q, index) => {
           const actualIndex = startIndex + index;
@@ -120,5 +133,6 @@ const PageTwo: React.FC = () => {
     </div>
   );
 };
+
 
 export default PageTwo;
