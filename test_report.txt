@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (64 ms)
+  ✕ renders learn react link (63 ms)
 
   ● renders learn react link
 
@@ -133,7 +133,7 @@ FAIL src/App.test.tsx
               [33mclass[39m=[32m"homepage-container"[39m
             [36m>[39m
               [36m<p[39m
-                [33mstyle[39m=[32m"display: flex; z-index: 6;"[39m
+                [33mstyle[39m=[32m"display: flex;"[39m
               [36m>[39m
                 [0mWelcome to your Talent Trail! Discover your potential and find the right career path for you with our company. Whether you have a general idea about what you want to do, or have no idea what is out there, we are sure to provide you some insight in the right direction for your future. We know it can be daunting trying to find the perfect job, which is why here at Talent Trail, we're viewing this as a mountainous climb and provide you with two options for your career assessment. One basic assessment if you're in a hurry, and one detailed assessment if you really want some insight into your possible future career.[0m
               [36m</p>[39m
@@ -185,9 +185,6 @@ FAIL src/App.test.tsx
             [36m<div[39m
               [33mclass[39m=[32m"basic-div"[39m
             [36m>[39m
-              [36m<p>[39m
-                [0mIn the mood for just a short journey? Take the path up the hill and take our Basic Questions assessment to get general idea about what awaits you at the end of your career path.[0m
-              [36m</p>[39m
               [36m<button[39m
                 [33mclass[39m=[32m"btn btn-primary"[39m
                 [33mtype[39m=[32m"button"[39m
@@ -198,9 +195,6 @@ FAIL src/App.test.tsx
             [36m<div[39m
               [33mclass[39m=[32m"detailed-div"[39m
             [36m>[39m
-              [36m<p>[39m
-                [0mReady to climb Everest? Take the intense hike and journey through through the mountains with our Detailed Questions assessment where you will need to put a bit more effort to reach the top and your end career destination.[0m
-              [36m</p>[39m
               [36m<button[39m
                 [33mclass[39m=[32m"btn btn-primary"[39m
                 [33mstyle[39m=[32m"margin-left: 10px;"[39m
@@ -232,20 +226,20 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
------------------------|---------|----------|---------|---------|---------------------------
-File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s         
------------------------|---------|----------|---------|---------|---------------------------
-All files              |   19.44 |     1.92 |   10.63 |   20.14 |                           
- AdvancedQuestions.tsx |    7.89 |        0 |       0 |    8.33 | 23-112                    
- App.tsx               |   32.07 |     4.54 |   30.76 |   33.33 | 24,37,41-87,92-98,144-181 
- BasicQuestions.tsx    |   13.04 |        0 |       0 |   13.63 | 44-98                     
- index.tsx             |       0 |      100 |     100 |       0 | 8-22                      
- navBar.tsx            |   42.85 |      100 |      20 |   42.85 | 15-25                     
- reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10                      
- results.tsx           |   16.66 |        0 |       0 |   16.66 | 8-13,18-31                
------------------------|---------|----------|---------|---------|---------------------------
+-----------------------|---------|----------|---------|---------|------------------------------
+File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s            
+-----------------------|---------|----------|---------|---------|------------------------------
+All files              |   16.86 |     1.51 |    9.43 |   17.83 |                              
+ AdvancedQuestions.tsx |    6.81 |        0 |       0 |    7.31 | 24-125                       
+ App.tsx               |   26.98 |     3.57 |   26.66 |   28.81 | 24,37,41-102,109-115,167-195 
+ BasicQuestions.tsx    |   10.34 |        0 |       0 |   11.11 | 44-111                       
+ index.tsx             |       0 |      100 |     100 |       0 | 8-22                         
+ navBar.tsx            |   42.85 |      100 |      20 |   42.85 | 15-25                        
+ reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10                         
+ results.tsx           |   16.66 |        0 |       0 |   16.66 | 8-13,18-31                   
+-----------------------|---------|----------|---------|---------|------------------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.547 s
+Time:        2.622 s
 Ran all test suites.
