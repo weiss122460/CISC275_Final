@@ -3,6 +3,8 @@ import { Button, ProgressBar, Form } from 'react-bootstrap';
 import NavBar from './navBar';
 import { Alert } from 'react-bootstrap';
 import './BasicQuestions.css';
+import birdFlock from "./images/birdFlock.gif"
+import { relative } from 'path';
 
 
 //Basic questions
@@ -77,7 +79,7 @@ const PageOne: React.FC = () => {
       <div className='body'>
         <h1>Career Quiz</h1>
         <ProgressBar now={progress} label={`${progress}%`} style={{ marginBottom: '20px' }} />
-
+        <img src={birdFlock} alt="test" width="100px" style={{position: 'relative', left: progress}}></img>
         {showCompletionMessage && (
           <Alert variant="success">
             🎉 You've completed all the basic questions! Well done!

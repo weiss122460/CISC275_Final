@@ -3,6 +3,8 @@ import { Button, ProgressBar, Form } from 'react-bootstrap';
 import NavBar from './navBar';
 import { Alert } from 'react-bootstrap';
 import './AdvancedQuestions.css';
+import birdFlock from "./images/birdFlock.gif"
+import snowFalling from "./images/snowFalling.gif"
 
 //Advanced questions
 export const questions = [
@@ -73,10 +75,14 @@ const PageTwo: React.FC = () => {
 
   return (
     <div className='advanced-questions'>
+      <div className='snow-container'>
+      <img src={snowFalling} className="snow-falling" alt="snowFalling" style={{height: '970px'}}></img>
+      </div>
       <NavBar />
-      <div className='body'>
+      <div className='body' style={{zIndex:2}}>
         <h1>Career Quiz - Short Answer</h1>
         <ProgressBar now={progress} label={`${progress}%`} style={{ marginBottom: '20px' }} />
+       {/* <img src={birdFlock} className="test1" alt="test" width="100px" style={{position: 'relative', left: `${progress}%`}}></img>*/}
 
         {showCompletionMessage && (
           <Alert variant="success">

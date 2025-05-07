@@ -2,7 +2,7 @@
     text-align: center;
     padding: 20px;
     color: white;
-    background: url('/public/background.png') no-repeat center center fixed;
+    background: url('/public/basicQuestionBackground.png') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
     display: flex;
