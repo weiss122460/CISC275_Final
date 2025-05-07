@@ -188,10 +188,19 @@ const Home: React.FC = () => {
 
       <div className="questions-div">
         <div className="basic-div">
+         <p>
+          In the mood for just a short journey? Take the path up the hill and take our Basic Questions
+          assessment to get general idea about what awaits you at the end of your career path.
+        </p>
           <Button onClick={() => navigate("/page-one")}>Go to Basic Questions</Button>
         </div>
 
         <div className="detailed-div">
+        <p>
+Ready to climb Everest? Take the intense hike and journey through through the mountains with 
+our Detailed Questions assessment where you will need to put a bit more effort to reach the top
+and your end career destination. 
+</p>
           <Button onClick={() => navigate("/page-two")} style={{ marginLeft: '10px' }}>Go to Advanced Questions</Button>
         </div>
       </div>

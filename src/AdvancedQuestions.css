@@ -2,7 +2,7 @@
     text-align: center;
     padding: 20px;
     color: white;
-    background: url('/public/background.png') no-repeat center center fixed;
+    background: url('/public/detailedQuestionBackground.png') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
     display: flex;
@@ -20,4 +20,10 @@
     max-width: 800px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
   }
+
+.snow-container{
+  position: absolute;
+}
+
+
   
