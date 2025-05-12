@@ -3,7 +3,6 @@ import { Button, ProgressBar, Form } from 'react-bootstrap';
 import NavBar from './navBar';
 import { Alert } from 'react-bootstrap';
 import './AdvancedQuestions.css';
-import birdFlock from "./images/birdFlock.gif"
 import snowFalling from "./images/snowFalling.gif"
 import rockBar from "./images/rockBar.png"
 
@@ -44,6 +43,8 @@ const PageTwo: React.FC = () => {
       setShowCompletionMessage(false);
     }
   }, [submitted]);
+
+
 
   // handles responses
   const handleAnswer = (index: number, value: string) => {

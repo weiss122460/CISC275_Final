@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
 import { HashRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import ScrollToTop from "./ScrollToTop"
 import { questions as basicQuestions } from './BasicQuestions';
 import { questions as advancedQuestions } from './AdvancedQuestions';
 import PageOne from './BasicQuestions';
@@ -12,6 +13,8 @@ import Results from './results';
 import clouds from './images/clouds.png';
 import birdAll from './images/birdAll.gif';
 import birdFew from './images/birdsFew.gif';
+import hikers from './images/hikers.png'
+import hikingBear from'./images/hikingBear.png'
 
 const saveKeyData = "MYKEY";
 
@@ -139,7 +142,7 @@ const Home: React.FC = () => {
 
       <header className="App-header">
         <div className='homepage-container'>
-          <p style={{ display: 'flex' }}>
+          <p style={{ display: 'flex', paddingTop:'30px' }}>
             Welcome to your Talent Trail! Discover your potential and find the right career path for you
             with our company. Whether you have a general idea about what you want to do, or have no idea what is 
             out there, we are sure to provide you some insight in the right direction for your future. We know
@@ -193,6 +196,7 @@ const Home: React.FC = () => {
           assessment to get general idea about what awaits you at the end of your career path.
         </p>
           <Button onClick={() => navigate("/page-one")}>Go to Basic Questions</Button>
+          <img src={hikingBear} alt='hikers' style={{height:'200px', display:'flex', paddingLeft:"15%", paddingTop:'5%'}}></img>
         </div>
 
         <div className="detailed-div">
@@ -202,15 +206,18 @@ our Detailed Questions assessment where you will need to put a bit more effort t
 and your end career destination. 
 </p>
           <Button onClick={() => navigate("/page-two")} style={{ marginLeft: '10px' }}>Go to Advanced Questions</Button>
+          <img src={hikers} alt='hikers' style={{height:'200px', display:'flex', paddingLeft:"17%"}}></img>
         </div>
-      </div>
+      </div> 
     </div>
   );
 };
 
 const App: React.FC = () => (
   <Router>
+    <ScrollToTop />
     <Routes>
+      
       <Route path="/" element={<Home />} />
       <Route path="/page-one" element={<PageOne />} />
       <Route path="/page-two" element={<PageTwo />} />
