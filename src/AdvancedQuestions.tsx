@@ -3,7 +3,6 @@ import { Button, ProgressBar, Form } from 'react-bootstrap';
 import NavBar from './navBar';
 import { Alert } from 'react-bootstrap';
 import './AdvancedQuestions.css';
-import birdFlock from "./images/birdFlock.gif"
 import snowFalling from "./images/snowFalling.gif"
 import rockBar from "./images/rockBar.png"
 
