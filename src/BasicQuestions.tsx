@@ -3,7 +3,7 @@ import { Button, ProgressBar, Form } from 'react-bootstrap';
 import NavBar from './navBar';
 import { Alert } from 'react-bootstrap';
 import './BasicQuestions.css';
-import birdFlock from "./images/birdFlock.gif"
+import rockBar from './images/rockBar.png'
 
 
 //Basic questions
@@ -70,6 +70,11 @@ const PageOne: React.FC = () => {
     localStorage.setItem(userAnswers, JSON.stringify(newAnswers));
   };
 
+  const handleClearAnswers = () => {
+  setAnswers(Array(questions.length).fill(null)); // Reset state
+  localStorage.removeItem(userAnswers); // Clear local storage
+}
+
   const progress = Math.round((answers.filter(answer => answer !== null).length / questions.length) * 100);
 
   return (
@@ -77,8 +82,11 @@ const PageOne: React.FC = () => {
       <NavBar />
       <div className='body'>
         <h1>Career Quiz</h1>
-        <ProgressBar now={progress} label={`${progress}%`} style={{ marginBottom: '20px' }} />
-        <img src={birdFlock} alt="test" width="100px" style={{position: 'relative', left: progress}}></img>
+        <div className='rock-progress-bar'>
+        <img src={rockBar} alt="rock-bar" style={{position: 'relative', bottom:"152px", right: "30px", height:"310px"}}></img>
+         <img src={rockBar} alt="rock-bar" style={{position: 'relative', bottom:"462px", left: "190px", height:"310px"}}></img>
+        </div>
+        <ProgressBar now={progress} label={`${progress}%`} style={{ marginBottom: '20px', zIndex:'10' }} />
         {showCompletionMessage && (
           <Alert variant="success">
             🎉 You've completed all the basic questions! Well done!
@@ -116,6 +124,12 @@ const PageOne: React.FC = () => {
             </Button>
           ))}
         </div>
+        <Button className="clear-answers" onClick={handleClearAnswers}style={{marginRight: "20px"}}>
+          Clear Answers
+        </Button>
+        <Button>
+          Get Results
+        </Button>
       </div>
     </div>
   );

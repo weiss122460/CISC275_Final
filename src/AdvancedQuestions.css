@@ -1,15 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap');
+
 .advanced-questions {
     text-align: center;
-    padding: 20px;
+    padding-bottom: 20px;
     color: white;
     background: url('/public/detailedQuestionBackground.png') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
+    max-height: 970vh;
+    overflow-y: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.6);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.   5);
+    overflow:hidden;
+    font-family: Tagesschrift;
+  }
+
+  .advanced-questions Button{
+    background-color: #857E76;
   }
   
   .body {
@@ -22,8 +32,34 @@
   }
 
 .snow-container{
-  position: absolute;
+  position:relative;
+  width: 0px;
+  height: 0px;
 }
+.snow-falling{
+position: relative;
+right: 900px
+}
+
+.rock-progress-bar{
+  position: relative;
+  width:0;
+  height:0;
+  z-index: -1;
+  padding-top: 10px;
+}
+
+.progress{
+  background-color: rgb(243, 239, 239);
+}
+.progress .progress-bar{
+  background-color: #857E76 !important;
+  color: rgb(26, 26, 26);
+  font-family: Tagesschrift;
+  font-size: medium;
+}
+
+
 
 
   
