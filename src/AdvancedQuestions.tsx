@@ -5,6 +5,7 @@ import { Alert } from 'react-bootstrap';
 import './AdvancedQuestions.css';
 import birdFlock from "./images/birdFlock.gif"
 import snowFalling from "./images/snowFalling.gif"
+import rockBar from "./images/rockBar.png"
 
 //Advanced questions
 export const questions = [
@@ -76,13 +77,16 @@ const PageTwo: React.FC = () => {
   return (
     <div className='advanced-questions'>
       <div className='snow-container'>
-      <img src={snowFalling} className="snow-falling" alt="snowFalling" style={{height: '970px'}}></img>
+      <img src={snowFalling} className="snow-falling" alt="snowFalling"></img>
       </div>
       <NavBar />
       <div className='body' style={{zIndex:2}}>
         <h1>Career Quiz - Short Answer</h1>
-        <ProgressBar now={progress} label={`${progress}%`} style={{ marginBottom: '20px' }} />
-       {/* <img src={birdFlock} className="test1" alt="test" width="100px" style={{position: 'relative', left: `${progress}%`}}></img>*/}
+        <div className='rock-progress-bar'>
+        <img src={rockBar} alt="rock-bar" style={{position: 'relative', bottom:'153px', right:'10px', height:'310px'}}></img>
+        <img src={rockBar} alt="rock-bar" style={{position: 'relative', bottom:'462px', left:'200px', height:'310px'}}></img>
+        </div>
+        <ProgressBar now={progress} className='progress' label={`${progress}%`} style={{ marginBottom: '20px'}} />
 
         {showCompletionMessage && (
           <Alert variant="success">
@@ -135,6 +139,9 @@ const PageTwo: React.FC = () => {
             </Button>
           ))}
         </div>
+          <Button>
+                  Get Results
+                </Button>
       </div>
     </div>
   );
