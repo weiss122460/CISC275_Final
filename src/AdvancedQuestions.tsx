@@ -45,6 +45,8 @@ const PageTwo: React.FC = () => {
     }
   }, [submitted]);
 
+
+
   // handles responses
   const handleAnswer = (index: number, value: string) => {
     const newAnswers = [...answers];
