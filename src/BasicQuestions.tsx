@@ -4,7 +4,6 @@ import NavBar from './navBar';
 import { Alert } from 'react-bootstrap';
 import './BasicQuestions.css';
 import birdFlock from "./images/birdFlock.gif"
-import { relative } from 'path';
 
 
 //Basic questions

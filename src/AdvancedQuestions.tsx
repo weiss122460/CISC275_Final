@@ -76,7 +76,7 @@ const PageTwo: React.FC = () => {
   return (
     <div className='advanced-questions'>
       <div className='snow-container'>
-      <img src={snowFalling} className="snow-falling" alt="snowFalling" style={{height: '970px'}}></img>
+      <img src={snowFalling} className="snow-falling" alt="snowFalling" style={{height: '700px'}}></img>
       </div>
       <NavBar />
       <div className='body' style={{zIndex:2}}>
