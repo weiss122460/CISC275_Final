@@ -54,6 +54,8 @@ const PageOne: React.FC = () => {
 
   const [showCompletionMessage, setShowCompletionMessage] = useState(false); // 👈 New state
 
+
+  
   // Watch for completion
   React.useEffect(() => {
     if (answers.every((a) => a !== null)) {

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Card, Button, Container,  Spinner } from 'react-bootstrap';
 import './results.css';
+import loadingBear from './images/loadingBear.gif'
 
 // Simple Markdown-like bolding for **text**
 const parseMarkdownBold = (text: string) => {
@@ -22,7 +23,7 @@ const Results: React.FC = () => {
   const resultText = location.state?.result || "No result found.";
 
   React.useEffect(() => {
-    setTimeout(() => setLoading(false), 2000); // Wait for 2 seconds
+    setTimeout(() => setLoading(false), 5000); // Wait for 2 seconds
   }, []);
 
 
@@ -31,6 +32,7 @@ const Results: React.FC = () => {
       {loading ? (
          <div className="loading-screen">
           <Spinner animation="border" variant="primary" />
+          <img src={loadingBear} alt='footsteps' style={{position:'relative', right: '100px', height:'440px',}}></img>
           <p>Loading your career recommendation...</p>
         </div>
 
