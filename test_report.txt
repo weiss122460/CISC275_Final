@@ -72,7 +72,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (86 ms)
+  ✕ renders learn react link (92 ms)
 
   ● renders learn react link
 
@@ -126,22 +126,6 @@ FAIL src/App.test.tsx
                     [33mtabindex[39m=[32m"0"[39m
                   [36m>[39m
                     [0mHome[0m
-                  [36m</a>[39m
-                  [36m<a[39m
-                    [33mclass[39m=[32m"nav-link"[39m
-                    [33mhref[39m=[32m"#"[39m
-                    [33mrole[39m=[32m"button"[39m
-                    [33mtabindex[39m=[32m"0"[39m
-                  [36m>[39m
-                    [0mAbout[0m
-                  [36m</a>[39m
-                  [36m<a[39m
-                    [33mclass[39m=[32m"nav-link"[39m
-                    [33mhref[39m=[32m"#"[39m
-                    [33mrole[39m=[32m"button"[39m
-                    [33mtabindex[39m=[32m"0"[39m
-                  [36m>[39m
-                    [0mContact[0m
                   [36m</a>[39m
                 [36m</div>[39m
               [36m</div>[39m
@@ -314,19 +298,19 @@ FAIL src/App.test.tsx
 -----------------------|---------|----------|---------|---------|------------------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s            
 -----------------------|---------|----------|---------|---------|------------------------------
-All files              |   18.33 |     1.47 |   11.86 |   19.41 |                              
+All files              |   18.53 |     1.47 |   12.28 |   19.64 |                              
  AdvancedQuestions.tsx |    6.81 |        0 |       0 |    7.31 | 26-136                       
  App.tsx               |   26.98 |     3.57 |   26.66 |   28.81 | 27,40,44-105,112-118,170-208 
  BasicQuestions.tsx    |    9.37 |        0 |       0 |      10 | 45-122                       
  ScrollToTop.tsx       |     100 |      100 |     100 |     100 |                              
  index.tsx             |       0 |      100 |     100 |       0 | 8-22                         
  loading.tsx           |       0 |      100 |       0 |       0 | 4-5                          
- navBar.tsx            |   42.85 |      100 |      20 |   42.85 | 15-25                        
+ navBar.tsx            |      60 |      100 |   33.33 |      60 | 15-23                        
  reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10                         
  results.tsx           |    12.5 |        0 |       0 |   13.33 | 9-14,19-47                   
 -----------------------|---------|----------|---------|---------|------------------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.15 s
+Time:        3.091 s
 Ran all test suites.
