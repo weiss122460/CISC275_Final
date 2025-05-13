@@ -21,8 +21,6 @@ import TalentLogo from  './images/TalentLogo.png';
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link onClick={() => navigate('/')}>Home</Nav.Link>
-            <Nav.Link onClick={() => navigate('/about')}>About</Nav.Link>
-            <Nav.Link onClick={() => navigate('/contact')}>Contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
