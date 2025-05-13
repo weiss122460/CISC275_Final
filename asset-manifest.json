@@ -1,22 +1,28 @@
 {
   "files": {
-    "main.css": "/CISC275_Final/static/css/main.a3649778.css",
-    "main.js": "/CISC275_Final/static/js/main.655c9c1c.js",
+    "main.css": "/CISC275_Final/static/css/main.903c81cc.css",
+    "main.js": "/CISC275_Final/static/js/main.d89e34ff.js",
     "static/js/453.bad6c33a.chunk.js": "/CISC275_Final/static/js/453.bad6c33a.chunk.js",
+    "static/media/loadingBear.gif": "/CISC275_Final/static/media/loadingBear.356eaf85ebd4d1cf671a.gif",
     "static/media/clouds.png": "/CISC275_Final/static/media/clouds.c59301c7fdc82dfaa79f.png",
+    "static/media/snowFalling.gif": "/CISC275_Final/static/media/snowFalling.343735cb4f114e78aa77.gif",
     "static/media/HomepageDesign.png": "/CISC275_Final/static/media/HomepageDesign.a1bdcaefe81a7ee859c2.png",
+    "static/media/detailedQuestionBackground.png": "/CISC275_Final/static/media/detailedQuestionBackground.8c4cc2f4d20647d4363a.png",
     "static/media/birdAll.gif": "/CISC275_Final/static/media/birdAll.737897c58ccfc9157f5f.gif",
-    "static/media/background.png": "/CISC275_Final/static/media/background.832a001514eddc44a37d.png",
+    "static/media/basicQuestionBackground.png": "/CISC275_Final/static/media/basicQuestionBackground.3b6659d5c11fb5c689ce.png",
     "static/media/birdsFew.gif": "/CISC275_Final/static/media/birdsFew.fa3bd4a019f9369d73e6.gif",
+    "static/media/hikingBear.png": "/CISC275_Final/static/media/hikingBear.1dc31107884cd9d97e02.png",
+    "static/media/rockBar.png": "/CISC275_Final/static/media/rockBar.3541d376938d7e9b3e55.png",
+    "static/media/hikers.png": "/CISC275_Final/static/media/hikers.e63d988ee3f548dbbe77.png",
     "static/media/darkStone.jpg": "/CISC275_Final/static/media/darkStone.23f4f00de4d0b36c6aa3.jpg",
     "static/media/TalentLogo.png": "/CISC275_Final/static/media/TalentLogo.8458e4542185667b19ea.png",
     "index.html": "/CISC275_Final/index.html",
-    "main.a3649778.css.map": "/CISC275_Final/static/css/main.a3649778.css.map",
-    "main.655c9c1c.js.map": "/CISC275_Final/static/js/main.655c9c1c.js.map",
+    "main.903c81cc.css.map": "/CISC275_Final/static/css/main.903c81cc.css.map",
+    "main.d89e34ff.js.map": "/CISC275_Final/static/js/main.d89e34ff.js.map",
     "453.bad6c33a.chunk.js.map": "/CISC275_Final/static/js/453.bad6c33a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a3649778.css",
-    "static/js/main.655c9c1c.js"
+    "static/css/main.903c81cc.css",
+    "static/js/main.d89e34ff.js"
   ]
 }

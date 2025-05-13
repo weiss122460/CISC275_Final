@@ -2,8 +2,77 @@
 > starter_helpi@0.1.0 test
 > react-scripts test --coverage
 
+  console.error
+    Error: Not implemented: window.scroll
+        at module.exports (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/jsdom/lib/jsdom/browser/not-implemented.js:9:17)
+        at scroll (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/jsdom/lib/jsdom/browser/Window.js:866:7)
+        at /home/runner/work/CISC275_Final/CISC275_Final/src/ScrollToTop.tsx:8:16
+        at commitHookEffectListMount (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/react-dom/cjs/react-dom.development.js:23150:26)
+        at commitPassiveMountOnFiber (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/react-dom/cjs/react-dom.development.js:24931:11)
+        at commitPassiveMountEffects_complete (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/react-dom/cjs/react-dom.development.js:24891:9)
+        at commitPassiveMountEffects_begin (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/react-dom/cjs/react-dom.development.js:24878:7)
+        at commitPassiveMountEffects (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/react-dom/cjs/react-dom.development.js:24866:3)
+        at flushPassiveEffectsImpl (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/react-dom/cjs/react-dom.development.js:27039:3)
+        at flushPassiveEffects (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/react-dom/cjs/react-dom.development.js:26984:14)
+        at /home/runner/work/CISC275_Final/CISC275_Final/node_modules/react-dom/cjs/react-dom.development.js:26769:9
+        at flushActQueue (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/react/cjs/react.development.js:2667:24)
+        at act (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/react/cjs/react.development.js:2582:11)
+        at /home/runner/work/CISC275_Final/CISC275_Final/node_modules/@testing-library/react/dist/act-compat.js:63:25
+        at renderRoot (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/@testing-library/react/dist/pure.js:159:26)
+        at render (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/@testing-library/react/dist/pure.js:246:10)
+        at Object.<anonymous> (/home/runner/work/CISC275_Final/CISC275_Final/src/App.test.tsx:6:9)
+        at Promise.then.completed (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/jest-circus/build/utils.js:391:28)
+        at new Promise (<anonymous>)
+        at callAsyncCircusFn (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/jest-circus/build/utils.js:316:10)
+        at _callCircusTest (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/jest-circus/build/run.js:218:40)
+        at processTicksAndRejections (node:internal/process/task_queues:96:5)
+        at _runTest (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/jest-circus/build/run.js:155:3)
+        at _runTestsForDescribeBlock (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/jest-circus/build/run.js:66:9)
+        at run (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/jest-circus/build/run.js:25:3)
+        at runAndTransformResultsToJestFormat (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:170:21)
+        at jestAdapter (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:82:19)
+        at runTestInternal (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/jest-runner/build/runTest.js:389:16)
+        at runTest (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/jest-runner/build/runTest.js:475:34)
+        at TestRunner.runTests (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/jest-runner/build/index.js:101:12)
+        at TestScheduler.scheduleTests (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/@jest/core/build/TestScheduler.js:333:13)
+        at runJest (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/@jest/core/build/runJest.js:404:19)
+        at _run10000 (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/@jest/core/build/cli/index.js:320:7)
+        at runCLI (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/@jest/core/build/cli/index.js:173:3)
+        at Object.run (/home/runner/work/CISC275_Final/CISC275_Final/node_modules/jest-cli/build/cli/index.js:155:37) undefined
+
+    [0m [90m  6 |[39m
+     [90m  7 |[39m     [33mReact[39m[33m.[39museEffect(() [33m=>[39m {
+    [31m[1m>[22m[39m[90m  8 |[39m         window[33m.[39mscroll([35m0[39m[33m,[39m[35m0[39m)[33m;[39m
+     [90m    |[39m                [31m[1m^[22m[39m
+     [90m  9 |[39m     }[33m,[39m [pathname])
+     [90m 10 |[39m
+     [90m 11 |[39m     [36mreturn[39m [36mnull[39m[33m;[39m[0m
+
+      at VirtualConsole.<anonymous> (node_modules/jsdom/lib/jsdom/virtual-console.js:29:45)
+      at module.exports (node_modules/jsdom/lib/jsdom/browser/not-implemented.js:12:26)
+      at scroll (node_modules/jsdom/lib/jsdom/browser/Window.js:866:7)
+      at src/ScrollToTop.tsx:8:16
+      at commitHookEffectListMount (node_modules/react-dom/cjs/react-dom.development.js:23150:26)
+      at commitPassiveMountOnFiber (node_modules/react-dom/cjs/react-dom.development.js:24931:11)
+      at commitPassiveMountEffects_complete (node_modules/react-dom/cjs/react-dom.development.js:24891:9)
+      at commitPassiveMountEffects_begin (node_modules/react-dom/cjs/react-dom.development.js:24878:7)
+      at commitPassiveMountEffects (node_modules/react-dom/cjs/react-dom.development.js:24866:3)
+      at flushPassiveEffectsImpl (node_modules/react-dom/cjs/react-dom.development.js:27039:3)
+      at flushPassiveEffects (node_modules/react-dom/cjs/react-dom.development.js:26984:14)
+      at node_modules/react-dom/cjs/react-dom.development.js:26769:9
+      at flushActQueue (node_modules/react/cjs/react.development.js:2667:24)
+      at act (node_modules/react/cjs/react.development.js:2582:11)
+      at node_modules/@testing-library/react/dist/act-compat.js:63:25
+      at renderRoot (node_modules/@testing-library/react/dist/pure.js:159:26)
+      at render (node_modules/@testing-library/react/dist/pure.js:246:10)
+      at Object.<anonymous> (src/App.test.tsx:6:9)
+      at TestScheduler.scheduleTests (node_modules/@jest/core/build/TestScheduler.js:333:13)
+      at runJest (node_modules/@jest/core/build/runJest.js:404:19)
+      at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
+      at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
+
 FAIL src/App.test.tsx
-  ✕ renders learn react link (63 ms)
+  ✕ renders learn react link (86 ms)
 
   ● renders learn react link
 
@@ -133,7 +202,7 @@ FAIL src/App.test.tsx
               [33mclass[39m=[32m"homepage-container"[39m
             [36m>[39m
               [36m<p[39m
-                [33mstyle[39m=[32m"display: flex;"[39m
+                [33mstyle[39m=[32m"display: flex; padding-top: 30px;"[39m
               [36m>[39m
                 [0mWelcome to your Talent Trail! Discover your potential and find the right career path for you with our company. Whether you have a general idea about what you want to do, or have no idea what is out there, we are sure to provide you some insight in the right direction for your future. We know it can be daunting trying to find the perfect job, which is why here at Talent Trail, we're viewing this as a mountainous climb and provide you with two options for your career assessment. One basic assessment if you're in a hurry, and one detailed assessment if you really want some insight into your possible future career.[0m
               [36m</p>[39m
@@ -185,16 +254,27 @@ FAIL src/App.test.tsx
             [36m<div[39m
               [33mclass[39m=[32m"basic-div"[39m
             [36m>[39m
+              [36m<p>[39m
+                [0mIn the mood for just a short journey? Take the path up the hill and take our Basic Questions assessment to get general idea about what awaits you at the end of your career path.[0m
+              [36m</p>[39m
               [36m<button[39m
                 [33mclass[39m=[32m"btn btn-primary"[39m
                 [33mtype[39m=[32m"button"[39m
               [36m>[39m
                 [0mGo to Basic Questions[0m
               [36m</button>[39m
+              [36m<img[39m
+                [33malt[39m=[32m"hikers"[39m
+                [33msrc[39m=[32m"hikingBear.png"[39m
+                [33mstyle[39m=[32m"height: 200px; display: flex; padding-left: 15%; padding-top: 5%;"[39m
+              [36m/>[39m
             [36m</div>[39m
             [36m<div[39m
               [33mclass[39m=[32m"detailed-div"[39m
             [36m>[39m
+              [36m<p>[39m
+                [0mReady to climb Everest? Take the intense hike and journey through through the mountains with our Detailed Questions assessment where you will need to put a bit more effort to reach the top and your end career destination.[0m
+              [36m</p>[39m
               [36m<button[39m
                 [33mclass[39m=[32m"btn btn-primary"[39m
                 [33mstyle[39m=[32m"margin-left: 10px;"[39m
@@ -202,6 +282,11 @@ FAIL src/App.test.tsx
               [36m>[39m
                 [0mGo to Advanced Questions[0m
               [36m</button>[39m
+              [36m<img[39m
+                [33malt[39m=[32m"hikers"[39m
+                [33msrc[39m=[32m"hikers.png"[39m
+                [33mstyle[39m=[32m"height: 200px; display: flex; padding-left: 17%;"[39m
+              [36m/>[39m
             [36m</div>[39m
           [36m</div>[39m
         [36m</div>[39m
@@ -229,17 +314,19 @@ FAIL src/App.test.tsx
 -----------------------|---------|----------|---------|---------|------------------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s            
 -----------------------|---------|----------|---------|---------|------------------------------
-All files              |   16.86 |     1.51 |    9.43 |   17.83 |                              
- AdvancedQuestions.tsx |    6.81 |        0 |       0 |    7.31 | 24-125                       
- App.tsx               |   26.98 |     3.57 |   26.66 |   28.81 | 24,37,41-102,109-115,167-195 
- BasicQuestions.tsx    |   10.34 |        0 |       0 |   11.11 | 44-111                       
+All files              |   18.33 |     1.47 |   11.86 |   19.41 |                              
+ AdvancedQuestions.tsx |    6.81 |        0 |       0 |    7.31 | 26-136                       
+ App.tsx               |   26.98 |     3.57 |   26.66 |   28.81 | 27,40,44-105,112-118,170-208 
+ BasicQuestions.tsx    |    9.37 |        0 |       0 |      10 | 45-122                       
+ ScrollToTop.tsx       |     100 |      100 |     100 |     100 |                              
  index.tsx             |       0 |      100 |     100 |       0 | 8-22                         
+ loading.tsx           |       0 |      100 |       0 |       0 | 4-5                          
  navBar.tsx            |   42.85 |      100 |      20 |   42.85 | 15-25                        
  reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10                         
- results.tsx           |   16.66 |        0 |       0 |   16.66 | 8-13,18-31                   
+ results.tsx           |    12.5 |        0 |       0 |   13.33 | 9-14,19-47                   
 -----------------------|---------|----------|---------|---------|------------------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.622 s
+Time:        3.15 s
 Ran all test suites.
