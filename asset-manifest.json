@@ -1,14 +1,16 @@
 {
   "files": {
-    "main.css": "/CISC275_Final/static/css/main.903c81cc.css",
-    "main.js": "/CISC275_Final/static/js/main.48f27bff.js",
+    "main.css": "/CISC275_Final/static/css/main.17b823b0.css",
+    "main.js": "/CISC275_Final/static/js/main.76fbc0ec.js",
     "static/js/453.bad6c33a.chunk.js": "/CISC275_Final/static/js/453.bad6c33a.chunk.js",
     "static/media/loadingBear.gif": "/CISC275_Final/static/media/loadingBear.356eaf85ebd4d1cf671a.gif",
     "static/media/clouds.png": "/CISC275_Final/static/media/clouds.c59301c7fdc82dfaa79f.png",
     "static/media/snowFalling.gif": "/CISC275_Final/static/media/snowFalling.343735cb4f114e78aa77.gif",
+    "static/media/basicResults.gif": "/CISC275_Final/static/media/basicResults.e06c1b16db40f073d907.gif",
     "static/media/HomepageDesign.png": "/CISC275_Final/static/media/HomepageDesign.a1bdcaefe81a7ee859c2.png",
     "static/media/detailedQuestionBackground.png": "/CISC275_Final/static/media/detailedQuestionBackground.8c4cc2f4d20647d4363a.png",
     "static/media/birdAll.gif": "/CISC275_Final/static/media/birdAll.737897c58ccfc9157f5f.gif",
+    "static/media/resultsDetailed.png": "/CISC275_Final/static/media/resultsDetailed.1eaf958349ba755f4377.png",
     "static/media/basicQuestionBackground.png": "/CISC275_Final/static/media/basicQuestionBackground.3b6659d5c11fb5c689ce.png",
     "static/media/birdsFew.gif": "/CISC275_Final/static/media/birdsFew.fa3bd4a019f9369d73e6.gif",
     "static/media/hikingBear.png": "/CISC275_Final/static/media/hikingBear.1dc31107884cd9d97e02.png",
@@ -17,12 +19,12 @@
     "static/media/darkStone.jpg": "/CISC275_Final/static/media/darkStone.23f4f00de4d0b36c6aa3.jpg",
     "static/media/TalentLogo.png": "/CISC275_Final/static/media/TalentLogo.8458e4542185667b19ea.png",
     "index.html": "/CISC275_Final/index.html",
-    "main.903c81cc.css.map": "/CISC275_Final/static/css/main.903c81cc.css.map",
-    "main.48f27bff.js.map": "/CISC275_Final/static/js/main.48f27bff.js.map",
+    "main.17b823b0.css.map": "/CISC275_Final/static/css/main.17b823b0.css.map",
+    "main.76fbc0ec.js.map": "/CISC275_Final/static/js/main.76fbc0ec.js.map",
     "453.bad6c33a.chunk.js.map": "/CISC275_Final/static/js/453.bad6c33a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.903c81cc.css",
-    "static/js/main.48f27bff.js"
+    "static/css/main.17b823b0.css",
+    "static/js/main.76fbc0ec.js"
   ]
 }
