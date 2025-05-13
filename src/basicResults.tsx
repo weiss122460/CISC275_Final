@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Card, Button, Container,  Spinner } from 'react-bootstrap';
-import './results.css';
+import './basicResults.css';
 import loadingBear from './images/loadingBear.gif'
 
 // Simple Markdown-like bolding for **text**

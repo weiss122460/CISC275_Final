@@ -9,7 +9,7 @@ import PageOne from './BasicQuestions';
 import PageTwo from './AdvancedQuestions';
 import NavBar from './navBar';
 import TalentLogo from './images/TalentLogo.png';
-import Results from './results';
+import Results from './basicResults';
 import clouds from './images/clouds.png';
 import birdAll from './images/birdAll.gif';
 import birdFew from './images/birdsFew.gif';
@@ -113,7 +113,7 @@ const Home: React.FC = () => {
     gotRequest.current = true;
     const reply = await sendToOpenAI();
     if (reply) {
-      navigate("/results", { state: { result: reply } });
+      navigate("/basicResults", { state: { result: reply } });
     }
     gotRequest.current = false;
   };
@@ -221,7 +221,7 @@ const App: React.FC = () => (
       <Route path="/" element={<Home />} />
       <Route path="/page-one" element={<PageOne />} />
       <Route path="/page-two" element={<PageTwo />} />
-      <Route path="/results" element={<Results />} />
+      <Route path="/BasicResults" element={<Results />} />
     </Routes>
   </Router>
 );
