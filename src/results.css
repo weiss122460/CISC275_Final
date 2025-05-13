@@ -50,3 +50,10 @@ body {
   display: flex;
   justify-content: flex-end;
 }
+
+
+.loading-screen {
+  background-color: black;
+  align-content: center;
+  
+}
