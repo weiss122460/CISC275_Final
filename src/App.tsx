@@ -1,15 +1,14 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './App.css';
 import { Button, Form } from 'react-bootstrap';
 import { HashRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import ScrollToTop from "./ScrollToTop"
-import { questions as basicQuestions } from './BasicQuestions';
-import { questions as advancedQuestions } from './AdvancedQuestions';
-import PageOne from './BasicQuestions';
-import PageTwo from './AdvancedQuestions';
+import BasicQuestions from './BasicQuestions';
+import AdvancedQuestions from './AdvancedQuestions';
 import NavBar from './navBar';
 import TalentLogo from './images/TalentLogo.png';
-import Results from './results';
+import BasicResults from './basicResults';
+import AdvancedResults from './detailedResults';
 import clouds from './images/clouds.png';
 import birdAll from './images/birdAll.gif';
 import birdFew from './images/birdsFew.gif';
@@ -30,7 +29,6 @@ const saveApiKey = (key: string) => {
 const Home: React.FC = () => {
   const navigate = useNavigate();
   const [key, setKey] = useState<string>("");
-  const gotRequest = useRef(false);
 
   useEffect(() => {
     setKey(getStoredKey());
@@ -40,83 +38,6 @@ const Home: React.FC = () => {
     saveApiKey(key);
   }, [key]);
 
-  const sendToOpenAI = async () => {
-    const apiKey = getStoredKey();
-    if (!apiKey) {
-      alert("Please enter your API key first.");
-      return null;
-    }
-  
-    const basicAnswers: string[] = JSON.parse(localStorage.getItem("basic-quiz-answers") || '[]');
-    const advancedAnswers: string[] = JSON.parse(localStorage.getItem("advanced-quiz-answers") || '[]');
-  
-    const isBasicValid = basicAnswers.every((ans) => ans && ans.trim() !== "");
-    const isAdvancedValid = advancedAnswers.every((ans) => ans && ans.trim() !== "");
-  
-    if (!isBasicValid || !isAdvancedValid) {
-      alert("Please complete all questions in the quiz before submitting.");
-      return null;
-    }
-  
-    let selectedAnswers: string[] = [];
-    let selectedQuestions: string[] = [];
-  
-    if (isBasicValid) {
-      selectedAnswers = [...selectedAnswers, ...basicAnswers];
-      selectedQuestions = [...selectedQuestions, ...basicQuestions.map(q => q.question)];
-    }
-  
-    if (isAdvancedValid) {
-      selectedAnswers = [...selectedAnswers, ...advancedAnswers];
-      selectedQuestions = [...selectedQuestions, ...advancedQuestions];
-    }
-  
-    // Build markdown-style formatted QA pairs
-    const qaPairs = selectedQuestions.map((question, index) => {
-      const answer = selectedAnswers[index] || "(No answer provided)";
-      return `**Q${index + 1}:** ${question}\n**A${index + 1}:** ${answer}`;
-    });
-  
-    const prompt = `Please analyze the following career quiz answers and provide a clear, well-formatted career recommendation. Use paragraphs, bullet points, or section headers if necessary.\n\n${qaPairs.join("\n\n")}`;
-  
-    const tone = "You are a helpful and friendly career advisor. Your reply should be concise, well-structured, and easy to read. Use markdown formatting such as bold text, line breaks, or bullet points when helpful.";
-  
-    try {
-      const response = await fetch("https://api.openai.com/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${apiKey}`,
-        },
-        body: JSON.stringify({
-          model: "gpt-4.1",
-          messages: [
-            { role: "system", content: tone },
-            { role: "user", content: prompt },
-          ],
-        }),
-      });
-  
-      const data = await response.json();
-      const reply = data.choices?.[0]?.message?.content || "No reply.";
-      return reply;
-    } catch (error) {
-      console.error("OpenAI error:", error);
-      alert("There was an error processing your request.");
-    }
-  };
-  
-  
-
-  const HandleResultsButton = async (): Promise<void> => {
-    if (gotRequest.current) return;
-    gotRequest.current = true;
-    const reply = await sendToOpenAI();
-    if (reply) {
-      navigate("/results", { state: { result: reply } });
-    }
-    gotRequest.current = false;
-  };
 
   return (
     <div className="App">
@@ -179,14 +100,6 @@ const Home: React.FC = () => {
           </Button>
         </Form>
 
-        <Button
-          onClick={HandleResultsButton}
-          variant="success"
-          className="glow-button"
-          style={{ marginTop: "20px" }}
-        >
-          Analyze My Results
-        </Button>
       </header>
 
       <div className="questions-div">
@@ -195,7 +108,7 @@ const Home: React.FC = () => {
           In the mood for just a short journey? Take the path up the hill and take our Basic Questions
           assessment to get general idea about what awaits you at the end of your career path.
         </p>
-          <Button onClick={() => navigate("/page-one")}>Go to Basic Questions</Button>
+          <Button onClick={() => navigate("/basic-questions", { state: { apiKey: key }})}>Go to Basic Questions</Button>
           <img src={hikingBear} alt='hikers' style={{height:'200px', display:'flex', paddingLeft:"15%", paddingTop:'5%'}}></img>
         </div>
 
@@ -205,7 +118,7 @@ Ready to climb Everest? Take the intense hike and journey through through the mo
 our Detailed Questions assessment where you will need to put a bit more effort to reach the top
 and your end career destination. 
 </p>
-          <Button onClick={() => navigate("/page-two")} style={{ marginLeft: '10px' }}>Go to Advanced Questions</Button>
+          <Button onClick={() => navigate("/advanced-questions", {state: {apiKey: key}})} style={{ marginLeft: '10px' }}>Go to Advanced Questions</Button>
           <img src={hikers} alt='hikers' style={{height:'200px', display:'flex', paddingLeft:"17%"}}></img>
         </div>
       </div> 
@@ -219,9 +132,10 @@ const App: React.FC = () => (
     <Routes>
       
       <Route path="/" element={<Home />} />
-      <Route path="/page-one" element={<PageOne />} />
-      <Route path="/page-two" element={<PageTwo />} />
-      <Route path="/results" element={<Results />} />
+      <Route path="/basic-questions" element={<BasicQuestions />} />
+      <Route path="/advanced-questions" element={<AdvancedQuestions />} />
+      <Route path="/basicResults" element={<BasicResults/>} />
+      <Route path="/detailedResults" element={<AdvancedResults/>}/>
     </Routes>
   </Router>
 );

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Card, Button, Container,  Spinner } from 'react-bootstrap';
-import './results.css';
+import { Card, Button, Container } from 'react-bootstrap';
+import './detailedResults.css';
 import loadingBear from './images/loadingBear.gif'
 
 // Simple Markdown-like bolding for **text**
@@ -15,7 +15,7 @@ const parseMarkdownBold = (text: string) => {
   });
 };
 
-const Results: React.FC = () => {
+const AdvancedResults: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   const location = useLocation();
@@ -28,22 +28,22 @@ const Results: React.FC = () => {
 
 
   return (
-    <Container className="results-container">
+    <div className='detailed-results'>
+    <Container className="detailed-results-container">
       {loading ? (
-         <div className="loading-screen">
-          <Spinner animation="border" variant="primary" />
-          <img src={loadingBear} alt='footsteps' style={{position:'relative', right: '100px', height:'440px',}}></img>
+         <div className="detailed-loading-screen">
+          <img src={loadingBear} alt='footsteps' style={{position:'relative', height:'440px',}}></img>
           <p>Loading your career recommendation...</p>
         </div>
 
       ): (
-      <Card className="results-card">
+      <Card className="detailed-results-card">
         <Card.Body>
-          <Card.Title className="results-title">Your Career Recommendation</Card.Title>
-          <div className="results-content">
+          <Card.Title className="detailed-results-title">Your Career Recommendation</Card.Title>
+          <div className="detailed-results-content">
             {parseMarkdownBold(resultText)}
           </div>
-          <div className="results-button">
+          <div className="detailed-results-button">
             <Button variant="success" onClick={() => navigate("/")}>
               Back to Home
             </Button>
@@ -51,7 +51,9 @@ const Results: React.FC = () => {
         </Card.Body>
       </Card>
       )}</Container>
+      </div>
   );
+  
 };
 
-export default Results;
+export default AdvancedResults;

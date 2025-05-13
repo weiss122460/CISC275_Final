@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Button, ProgressBar, Form } from 'react-bootstrap';
+import { useLocation, useNavigate } from 'react-router-dom';
 import NavBar from './navBar';
 import { Alert } from 'react-bootstrap';
 import './BasicQuestions.css';
@@ -41,19 +42,19 @@ export const questions = [
 // Key used for localStorage
 const userAnswers = 'basic-quiz-answers';
 
-const PageOne: React.FC = () => {
+const BasicQuestions: React.FC = () => {
   const [answers, setAnswers] = useState<(string | null)[]>(
     () => JSON.parse(localStorage.getItem(userAnswers) || 'null') ?? Array(questions.length).fill(null)
   );
 
+  const gotRequest = useRef(false);
   const [currentPage, setCurrentPage] = useState(1);
   const questionsPerPage = 4;
   const totalPages = Math.ceil(questions.length / questionsPerPage);
   const startIndex = (currentPage - 1) * questionsPerPage;
   const currentQuestions = questions.slice(startIndex, startIndex + questionsPerPage);
-
+  const navigate = useNavigate();
   const [showCompletionMessage, setShowCompletionMessage] = useState(false); // 👈 New state
-
 
   
   // Watch for completion
@@ -76,6 +77,82 @@ const PageOne: React.FC = () => {
   setAnswers(Array(questions.length).fill(null)); // Reset state
   localStorage.removeItem(userAnswers); // Clear local storage
 }
+
+  const location = useLocation();
+  const apiKey = location.state?.apiKey || "";
+  console.log("Received API Key", apiKey)
+
+  const sendToOpenAI = async () => {
+      if (!apiKey) {
+        alert("Please enter your API key first.");
+        return null;
+      }
+    
+      const basicAnswers: string[] = JSON.parse(localStorage.getItem("basic-quiz-answers") || '[]');
+    
+      const isBasicValid = basicAnswers.every((ans) => ans && ans.trim() !== "");
+    
+      if (!isBasicValid) {
+        alert("Please complete all questions in the quiz before submitting.");
+        return null;
+      }
+    
+      let selectedAnswers: string[] = [];
+      let selectedQuestions: string[] = [];
+    
+      if (isBasicValid) {
+        selectedAnswers = [...selectedAnswers, ...basicAnswers];
+        selectedQuestions = [...selectedQuestions, ...questions.map(q => q.question)];
+      }
+    
+      // Build markdown-style formatted QA pairs
+      const qaPairs = selectedQuestions.map((question, index) => {
+        const answer = selectedAnswers[index] || "(No answer provided)";
+        return `**Q${index + 1}:** ${question}\n**A${index + 1}:** ${answer}`;
+      });
+    
+      const prompt = `Please analyze the following career quiz answers and provide a clear, well-formatted career recommendation. Use paragraphs, bullet points, or section headers if necessary.\n\n${qaPairs.join("\n\n")}`;
+    
+      const tone = "You are a helpful and friendly career advisor. Your reply should be concise, well-structured, and easy to read. Use markdown formatting such as bold text, line breaks, or bullet points when helpful.";
+    
+      try {
+        const response = await fetch("https://api.openai.com/v1/chat/completions", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${apiKey}`,
+          },
+          body: JSON.stringify({
+            model: "gpt-4.1",
+            messages: [
+              { role: "system", content: tone },
+              { role: "user", content: prompt },
+            ],
+          }),
+        });
+    
+        const data = await response.json();
+        const reply = data.choices?.[0]?.message?.content || "No reply.";
+        return reply;
+      } catch (error) {
+        console.error("OpenAI error:", error);
+        alert("There was an error processing your request.");
+      }
+    };
+    
+    
+  
+    const HandleResultsButton = async (): Promise<void> => {
+      if (gotRequest.current) return;
+      gotRequest.current = true;
+      const reply = await sendToOpenAI();
+      if (reply) {
+        navigate("/basicResults", { state: { result: reply } });
+      }
+      gotRequest.current = false;
+    };
+  
+
 
   const progress = Math.round((answers.filter(answer => answer !== null).length / questions.length) * 100);
 
@@ -129,7 +206,7 @@ const PageOne: React.FC = () => {
         <Button className="clear-answers" onClick={handleClearAnswers}style={{marginRight: "20px"}}>
           Clear Answers
         </Button>
-        <Button>
+        <Button onClick={HandleResultsButton}>
           Get Results
         </Button>
       </div>
@@ -138,4 +215,4 @@ const PageOne: React.FC = () => {
 };
 
 
-export default PageOne;
+export default BasicQuestions;

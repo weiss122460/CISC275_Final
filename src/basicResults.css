@@ -1,12 +1,13 @@
 /* results.css */
+@import url('https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap');
 
 body {
-    background: url('/public/HomepageDesign.png') no-repeat center center fixed;
+    background: url('/public/basicResults.gif') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: Tagesschrift;
   }
   
 
@@ -54,6 +55,11 @@ body {
 
 .loading-screen {
   background-color: black;
+  position: fixed;
   align-content: center;
-  
+  left: 0px;
+  top: 0px; 
+  width: 100%;
+  height: 100%;
+  text-align: center;
 }
