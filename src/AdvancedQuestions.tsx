@@ -1,5 +1,6 @@
-import React, { useState} from 'react';
+import React, { useState, useRef} from 'react';
 import { Button, ProgressBar, Form } from 'react-bootstrap';
+import { useNavigate, useLocation } from 'react-router-dom';
 import NavBar from './navBar';
 import { Alert } from 'react-bootstrap';
 import './AdvancedQuestions.css';
@@ -21,7 +22,7 @@ export const questions = [
 const userAnswers = 'advanced-quiz-answers';
 
 
-const PageTwo: React.FC = () => {
+const AdvancedQuestions: React.FC = () => {
   // Load from local storage or initialize
   const [answers, setAnswers] = useState<string[]>(
     () => JSON.parse(localStorage.getItem(userAnswers) || 'null') ?? Array(questions.length).fill("")
@@ -34,6 +35,8 @@ const PageTwo: React.FC = () => {
   //page setup
   const [currentPage, setCurrentPage] = useState(1);
   const questionsPerPage = 4;
+  const navigate = useNavigate();
+  const gotRequest = useRef(false);
 
   // Effect to check for completion
   React.useEffect(() => {
@@ -69,6 +72,80 @@ const PageTwo: React.FC = () => {
       setSubmitted(newSubmitted);
     }
   };
+
+  const location = useLocation();
+  const apiKey = location.state?.apiKey || "";
+  console.log("Received API Key", apiKey)
+
+  const sendToOpenAI = async () => {
+      if (!apiKey) {
+        alert("Please enter your API key first.");
+        return null;
+      }
+
+      const advancedAnswers: string[] = JSON.parse(localStorage.getItem("advanced-quiz-answers") || '[]');
+      
+      const isAdvancedValid = advancedAnswers.every((ans) => ans && ans.trim() !== "");
+    
+      if (!isAdvancedValid) {
+        alert("Please complete all questions in the quiz before submitting.");
+        return null;
+      }
+    
+      let selectedAnswers: string[] = [];
+      let selectedQuestions: string[] = [];
+
+      if (isAdvancedValid) {
+        selectedAnswers = [...selectedAnswers, ...advancedAnswers];
+        selectedQuestions = [...selectedQuestions, ...questions];
+      }
+    
+      // Build markdown-style formatted QA pairs
+      const qaPairs = selectedQuestions.map((question, index) => {
+        const answer = selectedAnswers[index] || "(No answer provided)";
+        return `**Q${index + 1}:** ${question}\n**A${index + 1}:** ${answer}`;
+      });
+    
+      const prompt = `Please analyze the following career quiz answers and provide a clear, well-formatted career recommendation. Use paragraphs, bullet points, or section headers if necessary.\n\n${qaPairs.join("\n\n")}`;
+    
+      const tone = "You are a helpful and friendly career advisor. Your reply should be concise, well-structured, and easy to read. Use markdown formatting such as bold text, line breaks, or bullet points when helpful.";
+    
+      try {
+        const response = await fetch("https://api.openai.com/v1/chat/completions", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${apiKey}`,
+          },
+          body: JSON.stringify({
+            model: "gpt-4.1",
+            messages: [
+              { role: "system", content: tone },
+              { role: "user", content: prompt },
+            ],
+          }),
+        });
+    
+        const data = await response.json();
+        const reply = data.choices?.[0]?.message?.content || "No reply.";
+        return reply;
+      } catch (error) {
+        console.error("OpenAI error:", error);
+        alert("There was an error processing your request.");
+      }
+    };
+    
+    
+  
+    const HandleResultsButton = async (): Promise<void> => {
+      if (gotRequest.current) return;
+      gotRequest.current = true;
+      const reply = await sendToOpenAI();
+      if (reply) {
+        navigate("/detailedResults", { state: { result: reply } });
+      }
+      gotRequest.current = false;
+    };
 
   const progress: number = Math.round((submitted.filter(answer => answer).length / questions.length) * 100);
   const startIndex = (currentPage - 1) * questionsPerPage;
@@ -140,7 +217,7 @@ const PageTwo: React.FC = () => {
             </Button>
           ))}
         </div>
-          <Button>
+          <Button onClick={HandleResultsButton}>
                   Get Results
                 </Button>
       </div>
@@ -149,4 +226,4 @@ const PageTwo: React.FC = () => {
 };
 
 
-export default PageTwo;
+export default AdvancedQuestions;

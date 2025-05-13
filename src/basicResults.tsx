@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Card, Button, Container,  Spinner } from 'react-bootstrap';
-import './basicResults.css';
+import { Card, Button, Container } from 'react-bootstrap';
+import './basicResults.css'
 import loadingBear from './images/loadingBear.gif'
 
 // Simple Markdown-like bolding for **text**
@@ -15,12 +15,13 @@ const parseMarkdownBold = (text: string) => {
   });
 };
 
-const Results: React.FC = () => {
+const BasicResults: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   const location = useLocation();
   const navigate = useNavigate();
   const resultText = location.state?.result || "No result found.";
+  
 
   React.useEffect(() => {
     setTimeout(() => setLoading(false), 5000); // Wait for 2 seconds
@@ -31,8 +32,7 @@ const Results: React.FC = () => {
     <Container className="results-container">
       {loading ? (
          <div className="loading-screen">
-          <Spinner animation="border" variant="primary" />
-          <img src={loadingBear} alt='footsteps' style={{position:'relative', right: '100px', height:'440px',}}></img>
+          <img src={loadingBear} alt='footsteps' style={{position:'relative', height:'440px',}}></img>
           <p>Loading your career recommendation...</p>
         </div>
 
@@ -54,4 +54,4 @@ const Results: React.FC = () => {
   );
 };
 
-export default Results;
+export default BasicResults;
