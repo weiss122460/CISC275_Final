@@ -3,7 +3,7 @@
 
 .basic-questions {
     text-align: center;
-    padding-bottom: 25px;
+    padding-bottom: 0px;
     color: white;
     background: url('/public/basicQuestionBackground.png') no-repeat center center fixed;
     background-size: cover;

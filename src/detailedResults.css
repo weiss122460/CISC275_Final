@@ -20,11 +20,18 @@
 }
 
 .detailed-results-card {
-  background-color: rgba(0, 0, 0, 0.6); /* translucent dark background */
+background-color: rgba(0, 0, 0, 0.6); /* translucent dark background */
   color: white;
   border-radius: 20px;
   box-shadow: 0 0 20px #000;
   border: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.detailed-results-card > div {
+  flex: 1;
 }
 
 .detailed-results-card .card-title {

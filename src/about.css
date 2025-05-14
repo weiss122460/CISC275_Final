@@ -1,0 +1,58 @@
+.about-body{
+text-align: center;
+  background: url('/public/aboutBackground.gif') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  padding-bottom: 0px;
+  width: 100%;
+  color: white;
+  display: flex ;
+  font-family: Tagesschrift;
+  font-size: large;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow-x: hidden;
+}
+
+.image-container{
+    display: flex;
+    margin-left: 8.5%;
+}
+
+.ryan-container{
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+    padding-bottom: 5px;
+    border-radius:40px
+}
+
+.ever-container{
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+    padding-bottom: 5px;
+     border-radius:40px
+}
+
+.dylan-container{
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 20px;
+    padding-bottom: 5px;
+     border-radius:40px
+}
+
+.about-text{
+    background-color: rgb(230, 230, 230);
+    width: auto;
+    color: rgb(31, 31, 31);
+    font-size: larger;
+}
+
+.Footer {
+    margin-top: auto;
+}
