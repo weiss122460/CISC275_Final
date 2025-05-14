@@ -127,6 +127,14 @@ FAIL src/App.test.tsx
                   [36m>[39m
                     [0mHome[0m
                   [36m</a>[39m
+                  [36m<a[39m
+                    [33mclass[39m=[32m"nav-link"[39m
+                    [33mhref[39m=[32m"#"[39m
+                    [33mrole[39m=[32m"button"[39m
+                    [33mtabindex[39m=[32m"0"[39m
+                  [36m>[39m
+                    [0mAbout Us[0m
+                  [36m</a>[39m
                 [36m</div>[39m
               [36m</div>[39m
             [36m</div>[39m
@@ -266,6 +274,21 @@ FAIL src/App.test.tsx
               [36m/>[39m
             [36m</div>[39m
           [36m</div>[39m
+          [36m<footer[39m
+            [33mclass[39m=[32m"footer-transparent"[39m
+          [36m>[39m
+            [36m<img[39m
+              [33malt[39m=[32m"TalentTrail Logo"[39m
+              [33mclass[39m=[32m"me-2"[39m
+              [33msrc[39m=[32m"TalentLogo.png"[39m
+              [33mwidth[39m=[32m"40"[39m
+            [36m/>[39m
+            [36m<p[39m
+              [33mclass[39m=[32m"footer-text"[39m
+            [36m>[39m
+              [0mRyan Weiss, Ever Merino, Dylan Frajerman[0m
+            [36m</p>[39m
+          [36m</footer>[39m
         [36m</div>[39m
       [36m</div>[39m
     [36m</body>[39m
@@ -291,19 +314,21 @@ FAIL src/App.test.tsx
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |   13.97 |     1.11 |   10.76 |   14.74 |                   
- AdvancedQuestions.tsx |    3.57 |        0 |       0 |    3.79 | 27-213            
- App.tsx               |   73.68 |       50 |   44.44 |   73.68 | 26,38,91-121      
- BasicQuestions.tsx    |     4.1 |        0 |       0 |    4.41 | 46-199            
+All files              |   14.11 |     1.06 |   11.11 |   14.95 |                   
+ AdvancedQuestions.tsx |    3.57 |        0 |       0 |    3.79 | 28-214            
+ App.tsx               |   73.68 |       50 |   44.44 |   73.68 | 28,40,93-123      
+ BasicQuestions.tsx    |     4.1 |        0 |       0 |    4.41 | 47-200            
  ScrollToTop.tsx       |     100 |      100 |     100 |     100 |                   
- basicResults.tsx      |    12.5 |        0 |       0 |   13.33 | 9-14,19-47        
- detailedResults.tsx   |    12.5 |        0 |       0 |   13.33 | 9-14,19-47        
+ about.tsx             |      50 |      100 |       0 |      50 | 14                
+ basicResults.tsx      |    8.69 |        0 |       0 |    9.52 | 10-15,20-59       
+ detailedResults.tsx   |    8.69 |        0 |       0 |    9.52 | 10-15,20-58       
+ footer.tsx            |     100 |      100 |     100 |     100 |                   
  index.tsx             |       0 |      100 |     100 |       0 | 8-22              
- navBar.tsx            |      60 |      100 |   33.33 |      60 | 15-23             
+ navBar.tsx            |      50 |      100 |      25 |      50 | 15-24             
  reportWebVitals.ts    |       0 |        0 |       0 |       0 | 3-10              
 -----------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.159 s
+Time:        3.212 s
 Ran all test suites.
