@@ -5,6 +5,7 @@ import NavBar from './navBar';
 import { Alert } from 'react-bootstrap';
 import './BasicQuestions.css';
 import rockBar from './images/rockBar.png'
+import Footer from './footer';
 
 
 //Basic questions
@@ -111,7 +112,7 @@ const BasicQuestions: React.FC = () => {
         return `**Q${index + 1}:** ${question}\n**A${index + 1}:** ${answer}`;
       });
     
-      const prompt = `Please analyze the following career quiz answers and provide a clear, well-formatted career recommendation. Use paragraphs, bullet points, or section headers if necessary.\n\n${qaPairs.join("\n\n")}`;
+      const prompt = `Please analyze the following career quiz answers and provide 3 clear, well-formatted career recommendations with their average salaries. Use paragraphs, bullet points, or section headers if necessary.\n\n${qaPairs.join("\n\n")}`;
     
       const tone = "You are a helpful and friendly career advisor. Your reply should be concise, well-structured, and easy to read. Use markdown formatting such as bold text, line breaks, or bullet points when helpful.";
     
@@ -210,6 +211,7 @@ const BasicQuestions: React.FC = () => {
           Get Results
         </Button>
       </div>
+      <Footer />
     </div>
   );
 };

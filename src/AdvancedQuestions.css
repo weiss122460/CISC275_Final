@@ -2,7 +2,7 @@
 
 .advanced-questions {
     text-align: center;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
     color: white;
     background: url('/public/detailedQuestionBackground.png') no-repeat center center fixed;
     background-size: cover;

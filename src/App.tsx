@@ -14,6 +14,8 @@ import birdAll from './images/birdAll.gif';
 import birdFew from './images/birdsFew.gif';
 import hikers from './images/hikers.png'
 import hikingBear from'./images/hikingBear.png'
+import Footer from './footer';
+import About from './about';
 
 const saveKeyData = "MYKEY";
 
@@ -122,6 +124,7 @@ and your end career destination.
           <img src={hikers} alt='hikers' style={{height:'200px', display:'flex', paddingLeft:"17%"}}></img>
         </div>
       </div> 
+      <Footer />
     </div>
   );
 };
@@ -132,6 +135,7 @@ const App: React.FC = () => (
     <Routes>
       
       <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />}/>
       <Route path="/basic-questions" element={<BasicQuestions />} />
       <Route path="/advanced-questions" element={<AdvancedQuestions />} />
       <Route path="/basicResults" element={<BasicResults/>} />
