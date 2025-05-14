@@ -13,6 +13,8 @@ import clouds from './images/clouds.png';
 //import birdFlock from './images/birdFlock.gif'
 import birdAll from './images/birdAll.gif'
 import birdFew from './images/birdsFew.gif'
+import Footer from './footer';
+
 const saveKeyData = "MYKEY";
 
 const getStoredKey = (): string => {
@@ -134,7 +136,6 @@ const Home: React.FC = () => {
 
         <img src={TalentLogo} className="App-logo" width='350px'  style={{ float: "right", marginRight: "20px", padding: '30px', zIndex:4, borderRadius:'50px'}} alt='logo'/>
 </div>
-        <p>Ryan Weiss, Ever Merino, Dylan Frajerman</p>
         <Form style={{ marginTop: "20px" }}>
           <Form.Label className='api'>API Key:</Form.Label>
           <Form.Control
@@ -181,6 +182,7 @@ const Home: React.FC = () => {
       <Button onClick={() => navigate("/page-two")} style={{ marginLeft: '10px' }}>Go to Advanced Questions</Button>
       </div>
       </div>
+      <Footer />
     </div>
 
     

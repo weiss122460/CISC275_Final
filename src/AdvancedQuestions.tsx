@@ -2,6 +2,7 @@ import React, { useState} from 'react';
 import { Button, ProgressBar, Form } from 'react-bootstrap';
 import NavBar from './navBar';
 import './AdvancedQuestions.css';
+import Footer from './footer';
 
 //Advanced questions
 export const questions = [
@@ -117,6 +118,7 @@ const PageTwo: React.FC = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

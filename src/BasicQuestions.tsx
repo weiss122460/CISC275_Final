@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, ProgressBar, Form } from 'react-bootstrap';
 import NavBar from './navBar';
 import './BasicQuestions.css';
+import Footer from './footer';
 
 
 //Basic questions
@@ -103,6 +104,7 @@ const PageOne: React.FC = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
