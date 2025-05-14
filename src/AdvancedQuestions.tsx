@@ -54,7 +54,7 @@ const PageTwo: React.FC = () => {
     if (answers[index].trim() !== "") {
       const newSubmitted = [...submitted];
       newSubmitted[index] = false;
-      setSubmitted(newSubmitted);
+      setSubmitted(newSubmitted); 
     }
   };
 
