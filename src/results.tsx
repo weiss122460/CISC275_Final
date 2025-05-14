@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Card, Button, Container } from 'react-bootstrap';
 import './results.css';
+import Footer from './footer';
 
 // Simple Markdown-like bolding for **text**
 const parseMarkdownBold = (text: string) => {
@@ -61,6 +62,7 @@ const Results: React.FC = () => {
         </div>
         </Card.Body>
       </Card>
+      <Footer />
     </Container>
   );
 };
